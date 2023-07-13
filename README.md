@@ -64,7 +64,6 @@
 | lecture_name       |string     |null: false                   |
 | lecture_day        |data       |null: false                   |
 | lecture_time       |string     |null: false                   |
-| building           |string     |                              |
 | instructor_name    |string     |null: false                   |
 | user               |references |null: false, foreign_key: true|
 
