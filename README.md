@@ -20,6 +20,7 @@
 |------------------------|-----------|------------------------------|
 | email                  |string     |null: false , unique: true    |
 | encrypted_password     |string     |null: false                   |
+| worker_prefecture      |string     |null: false                   |
 | childcare_worker_number|string     |null: false                   |
 | childcare_worker_id    |integer    |null: false                   |
 | first_name             |string     |null: false                   |
