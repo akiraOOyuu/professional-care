@@ -47,7 +47,7 @@
 | employment           |data       |null: false , unique: true    |
 | affiliation          |string     |null: false                   |
 | rank_id              |integer    |null: false                   |
-| complet_id           |integer    |null: false                   |
+| complete_id          |integer    |null: false                   |
 | user                 |references |null: false, foreign_key: true|
 
 ### Association
