@@ -1,0 +1,135 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  font-weight: bold;
+  margin: 15px;
+  text-decoration: none;
+  color: #291cdd;
+}
+
+/* ヘッダー */
+
+.header {
+  background-color: #cbf3f2;
+  width: 100%;
+  margin-bottom: 48px;
+  padding: 20px 0;
+
+}
+.header .nav {
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  margin: 0 auto;
+  
+}
+.nav {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 200px;
+}
+.nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.nav__btn:hover{
+  color: #fff;
+  background: #87CEFA;
+}
+
+.nav__logout{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+}
+.nav__logout:hover{
+  opacity: 0.5;
+}
+
+/* トップぺージ */
+
+.input-container {
+  display: flex;
+}
+.input-container > div {
+  flex: 1;
+  margin-right: 10px;
+}
+.mypages { 
+  margin-top: 30px;
+}
+.user_mypages {
+  font-size: 1.2em;
+  padding: 5px 15px;
+}
+.search-input {
+  width: auto;
+}
+.input-field-name {
+  height: 30px;
+  width: 150px;
+}
+.input-field-number {
+  height: 30px;
+  width: 150px;
+}
+.input-field-pull {
+  height: 30px;
+}
+.input-field-time {
+  height: 30px;
+  width: 50px;
+}
+.headersearch-button {
+  height: 30px;
+}
+@media screen and (min-width: 768px) {
+  .search-input {
+    flex-direction: row;
+  }
+}

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CareControllerTest < ActionDispatch::IntegrationTest
+class CaresControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
