@@ -1,6 +1,6 @@
 class CaresController < ApplicationController
   def index
-    
+    @users = User.all
   end
   # def search
   #   query = params[:query]
