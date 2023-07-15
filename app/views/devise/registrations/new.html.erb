@@ -55,10 +55,9 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">保育士番号登録都道府県</label>
+      <label class="form-text">保育士番号登録都道府</label>
       <span class="indispensable">必須</span>
-      <%= f.text_field :worker_prefecture_id, class:"input-default", id:"worker_prefecture", placeholder:"例）岩手"%>
-        <%#= f.collection_select(:worker_prefecture_id, Prefecture.all, :id, :name, {selected: :prefecture_id}, {class:"select-box", id:"prefecture"}) %>
+      <%= f.select :worker_prefecture_id,  options_for_select(WorkerPrefecture.pluck(:name, :id)), {}, { class: "select-box", id: "prefecture" } %>
     </div>
       <div class='input-text-wrap'>
           <label class="form-text">保育士登録番号</label>
@@ -96,11 +95,10 @@
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">都道府県</label>
+          <label class="form-text">都道府</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :prefecture_id, class:"input-default", id:":prefecture", placeholder:"例）011111"%>
-        <%#= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {selected: :prefecture_id}, {class:"select-box", id:"prefecture"}) %>
+         <%= f.select :prefecture_id,  options_for_select(Prefecture.pluck(:name, :id)), {}, { class: "select-box", id: "prefecture" } %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
