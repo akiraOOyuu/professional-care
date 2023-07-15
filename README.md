@@ -20,9 +20,8 @@
 |------------------------|-----------|------------------------------|
 | email                  |string     |null: false , unique: true    |
 | encrypted_password     |string     |null: false                   |
-| worker_prefecture      |string     |null: false                   |
+| worker_prefecture_id   |string     |null: false                   |
 | childcare_worker_number|string     |null: false                   |
-| childcare_worker_id    |integer    |null: false                   |
 | first_name             |string     |null: false                   |
 | last_name              |string     |null: false                   |
 | first_name_reading     |string     |null: false                   |

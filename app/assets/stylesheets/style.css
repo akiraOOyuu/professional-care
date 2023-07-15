@@ -1,45 +1,7 @@
-/* リセットCSS */
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
-ul,
-li,
-h1,
-h2,
-p,
-div {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
-  color: #3b4043;
-}
-
-li {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  vertical-align: bottom;
-}
-
-a {
-  font-weight: bold;
-  margin: 15px;
-  text-decoration: none;
-  color: #291cdd;
-}
-
 /* ヘッダー */
 
 .header {
-  background-color: #ecf759;
+  background-color: #bff5dc;
   width: 100%;
   margin-bottom: 48px;
   padding: 20px 0;
@@ -55,6 +17,7 @@ a {
   
 }
 .nav {
+  padding: 0 20px;
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -66,10 +29,10 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #14242e;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #559dc9 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }

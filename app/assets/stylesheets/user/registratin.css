@@ -58,7 +58,7 @@
 .info-text {
   color: #888;
   font-size: 15px;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 .form-info-header {
   font-weight: bold;
@@ -151,4 +151,7 @@
   color: #0099e8;
   text-align: right;
   cursor: pointer;
+}
+.error-alert , .indispensable{
+  color: red;
 }

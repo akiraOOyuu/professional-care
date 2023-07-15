@@ -40,7 +40,7 @@
     </div>
     <div class='input-name-wrap'>
       <%= f.text_area :last_name, class:"input-name", id:"last-name", placeholder:"例) 山田" %>
-      <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 陸太郎" %>
+      <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 陸" %>
     </div>
   </div>
   <div class="form-group">
@@ -50,19 +50,21 @@
     </div>
     <div class='input-name-wrap'>
       <%= f.text_area :last_name_reading, class:"input-name", id:"last-name-kana", placeholder:"例) やまだ" %>
-      <%= f.text_area :first_name_reading, class:"input-name", id:"first-name-kana", placeholder:"例) りくたろう" %>
+      <%= f.text_area :first_name_reading, class:"input-name", id:"first-name-kana", placeholder:"例) りく" %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">保育士番号登録都道府県</label>
       <span class="indispensable">必須</span>
-      <%= f.text_field :block, class:"input-default", id:"addresses", placeholder:"例）岩手"%>
-        <%#= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {selected: :prefecture_id}, {class:"select-box", id:"prefecture"}) %>
+      <%= f.text_field :worker_prefecture_id, class:"input-default", id:"worker_prefecture", placeholder:"例）岩手"%>
+        <%#= f.collection_select(:worker_prefecture_id, Prefecture.all, :id, :name, {selected: :prefecture_id}, {class:"select-box", id:"prefecture"}) %>
+    </div>
+      <div class='input-text-wrap'>
           <label class="form-text">保育士登録番号</label>
           <span class="indispensable">必須</span>
-    </div>
-        <%= f.text_field :block, class:"input-default", id:"addresses", placeholder:"例）011111"%>
+        </div>
+        <%= f.text_field :childcare_worker_number, class:"input-default", id:":childcare_worker_number", placeholder:"例）011111"%>
   </div>
       
   <div class="form-group">
@@ -97,7 +99,7 @@
           <label class="form-text">都道府県</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :block, class:"input-default", id:"addresses", placeholder:"例）011111"%>
+        <%= f.text_field :prefecture_id, class:"input-default", id:":prefecture", placeholder:"例）011111"%>
         <%#= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {selected: :prefecture_id}, {class:"select-box", id:"prefecture"}) %>
       </div>
       <div class="form-group">
