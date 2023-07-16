@@ -1,45 +1,7 @@
-/* リセットCSS */
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
-ul,
-li,
-h1,
-h2,
-p,
-div {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
-  color: #3b4043;
-}
-
-li {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  vertical-align: bottom;
-}
-
-a {
-  font-weight: bold;
-  margin: 15px;
-  text-decoration: none;
-  color: #291cdd;
-}
-
 /* ヘッダー */
 
 .header {
-  background-color: #cbf3f2;
+  background-color: #bff5dc;
   width: 100%;
   margin-bottom: 48px;
   padding: 20px 0;
@@ -55,6 +17,7 @@ a {
   
 }
 .nav {
+  padding: 0 30px;
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -63,13 +26,15 @@ a {
   width: 200px;
 }
 .nav__btn{
+  margin-right: 10px;
   display: inline-block;
-  padding: 0.4em 1.6em;
+  padding: 0.8em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  font-weight: bold;
+  color: #14242e;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #559dc9 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -80,16 +45,22 @@ a {
 }
 
 .nav__logout{
+  font-weight: bold;
   display: inline-block;
-  padding: 0.4em 1.6em;
+  color: #14242e;
+  border: 1px #559dc9 solid;
+  opacity: 0.7;
+  padding: 0.8em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
   text-decoration: none;
   user-select: none;
 }
 .nav__logout:hover{
   opacity: 0.5;
+  color: #fff;
+  background: #87CEFA;
 }
+
 
 /* トップぺージ */
 
@@ -125,11 +96,49 @@ a {
   height: 30px;
   width: 50px;
 }
-.headersearch-button {
+.search-button {
   height: 30px;
 }
-@media screen and (min-width: 768px) {
-  .search-input {
-    flex-direction: row;
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .prototype_image{
+    width: 60%;
+  }
+}
+
+ /* スマホ表示 */
+@media (max-width: 599px) {
+  .logo {
+    width: 120px;
+  }
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
+  .prototype_image{
+    width: 100%;
+  }
+  .table{
+    width: 100%;
   }
 }
