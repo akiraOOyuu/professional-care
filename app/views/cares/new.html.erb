@@ -18,8 +18,8 @@
                     id:"employment-date",
                     use_month_numbers: true,
                     prompt:'--',
-                    start_year: 1930,
-                    end_year: (Time.now.year - 5),
+                    start_year: 1950,
+                    end_year: Time.now.year,
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
     </div>
@@ -33,10 +33,17 @@
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">ランク</label>
+          <label class="form-text">リーダー</label>
           <span class="indispensable">必須</span>
         </div>
-         <%#= f.select :rank_id,  options_for_select(Runk.pluck(:name, :id)), {}, { class: "select-box", id: "prefecture" } %>
+         <%= f.select :rank_id,  options_for_select(Rank.pluck(:name, :id)), {}, { class: "select-box", id: "prefecture" } %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">履修</label>
+          <span class="indispensable">必須</span>
+        </div>
+         <%= f.select :complete_id,  options_for_select(Complete.pluck(:name, :id)), {}, { class: "select-box", id: "prefecture" } %>
       </div>
       
       <div class='register-btn'>
