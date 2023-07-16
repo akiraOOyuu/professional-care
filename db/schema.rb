@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2023_07_15_122344) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "current_password"
+
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -49,4 +49,5 @@ ActiveRecord::Schema.define(version: 2023_07_15_122344) do
   end
 
   add_foreign_key "user_categories", "users"
+
 end

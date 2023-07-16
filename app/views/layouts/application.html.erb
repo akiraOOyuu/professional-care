@@ -4,7 +4,7 @@
     <title>ProfessionalCare</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,14 +17,7 @@
           <div class="nav__left">
             <%= link_to image_tag("melon.png", class: :logo), root_path %>
           </div>
-<<<<<<< Updated upstream
-            <%# ログインしているときは以下を表示するようにしましょう %>
-          <div class="nav__right"> 
-               <%= link_to "ログアウト",  class: :nav__logout %>
-               <%= link_to "New Proto",  class: :nav__btn %>
-             </div> 
-            <%# // ログインしているときは上記を表示するようにしましょう %>
-=======
+
             <%# ログインしているときは以下を表示 %>
             <% if user_signed_in? %>
           <div class="nav__right"> 
@@ -32,20 +25,12 @@
              </div> 
             <% else %>
             <%# // ログインしているときは上記を表示 %>
->>>>>>> Stashed changes
 
             <%# ログインしていないときは以下を表示 %>
             <div class="nav__right">
-              <%= link_to "ログイン",  class: :nav__btn %>
-              <%= link_to "新規登録",  class: :nav__btn %>
+              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
-<<<<<<< Updated upstream
-          <%# // ログインしていないときは上記を表示するようにしましょう %>
-=======
-             <%# // ログインしていないときは上記を表示 %>
-            <% end %>
->>>>>>> Stashed changes
-        </div>
      </div>
 
   </header>

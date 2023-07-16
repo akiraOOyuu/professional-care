@@ -22,9 +22,9 @@ class CaresController < ApplicationController
   def user_category_params
     params.require(:user_category).permit(:employment, :affiliationy, :rank_id, :complete_id).merge(user_id: current_user.id)
   end
-  def search
-    query = params[:query]
-    results = User.where("name LIKE ? OR name_reading LIKE ?", "%#{query}%", "%#{query}%")
-    # 検索
-  end
+  # def search
+  #   query = params[:query]
+  #   results = User.where("name LIKE ? OR name_reading LIKE ?", "%#{query}%", "%#{query}%")
+  #   # 検索
+  # end
 end

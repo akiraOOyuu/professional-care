@@ -1,45 +1,7 @@
-/* リセットCSS */
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
-ul,
-li,
-h1,
-h2,
-p,
-div {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
-  color: #3b4043;
-}
-
-li {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  vertical-align: bottom;
-}
-
-a {
-  font-weight: bold;
-  margin: 15px;
-  text-decoration: none;
-  color: #291cdd;
-}
-
 /* ヘッダー */
 
 .header {
-  background-color: #cbf3f2;
+  background-color: #bff5dc;
   width: 100%;
   padding: 20px 0;
   margin-bottom: 50px;
@@ -54,6 +16,7 @@ a {
   
 }
 .nav {
+  padding: 0 30px;
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -62,13 +25,15 @@ a {
   width: 50px;
 }
 .nav__btn{
+  margin-right: 10px;
   display: inline-block;
-  padding: 0.4em 1.6em;
+  padding: 0.8em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  font-weight: bold;
+  color: #14242e;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #559dc9 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -79,25 +44,26 @@ a {
 }
 
 .nav__logout{
-<<<<<<< Updated upstream
-=======
+
   margin-right: 20px;
   font-weight: bold;
->>>>>>> Stashed changes
   display: inline-block;
-  padding: 0.4em 1.6em;
+  color: #14242e;
+  border: 1px #559dc9 solid;
+  opacity: 0.7;
+  padding: 0.8em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
   text-decoration: none;
   user-select: none;
 }
 .nav__logout:hover{
   opacity: 0.5;
+  color: #fff;
+  background: #87CEFA;
 }
 
-<<<<<<< Updated upstream
 /* トップぺージ */
-=======
+
 .greeting__link:hover{
   opacity: 0.5;
   color: #080808;
@@ -110,7 +76,6 @@ a {
   margin-bottom: 50px;
   
 }
-/* トップページ */
 
 .my-img {
   width: auto;
@@ -118,7 +83,7 @@ a {
   opacity: 0.5;
 }
 /* newページ */
->>>>>>> Stashed changes
+
 
 .input-container {
   display: flex;
@@ -152,14 +117,10 @@ a {
   height: 30px;
   width: 50px;
 }
-.headersearch-button {
+.search-button {
   height: 30px;
 }
-<<<<<<< Updated upstream
-@media screen and (min-width: 768px) {
-  .search-input {
-    flex-direction: row;
-=======
+
 
 /* ユーザーページ */
 .user__wrapper{
@@ -195,6 +156,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
@@ -237,6 +199,5 @@ a {
   }
   .table{
     width: 100%;
->>>>>>> Stashed changes
   }
 }
