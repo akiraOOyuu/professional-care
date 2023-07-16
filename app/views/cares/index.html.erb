@@ -1,58 +1,20 @@
-
-<%= form_tag("/search", method: "get", class: "search-form") do %>
-  <div class="input-container">
-  <div>
-    <%= label_tag(:name, "名前", class: "input-label") %>
-    <%= text_field_tag(:name, params[:name], placeholder: "名前を入力", class: "input-field-name") %>
+<main class="main">
+  <div class="back-ground-img">
+ <%= image_tag("/assets/background.png", alt: "画像の説明", class: "my-img") %>
+    <%# ログインしているときは以下を表示する %>
+    <%  if user_signed_in? %>
+     <div class="greeting">
+       こんにちは、
+         <%= link_to  current_user.first_name, user_path(current_user),class: :greeting__link%>
+         さん
+      </div> 
+    
+    <%# // ログインしているときは上記を表示する %>
+    <div class="card__wrapper">
+      <%# リンク %>
+      <%= link_to "マイページ", user_path(current_user), class: :nav__btn %>
+      <%= link_to '登録情報編集',  edit_user_registration_path , class: :nav__btn%>
+      <%= link_to "詳細内容登録", new_cares_path, class: :nav__btn %>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:childcare_worker_number, "保育士番号", class: "input-label") %>
-    <%= text_field_tag(:childcare_worker_number, params[:childcare_worker_number], placeholder: "保育士番号を入力", class: "input-field-number") %>
-  </div>
-  <div>
-    <%= label_tag(:incomplete_lectures, "トータル講義時間", class: "input-label") %>
-    <%= select_tag(:incomplete_status, options_for_select([["職務分野別リーダー", "0-15"], ["中核リーダー", "15-60"], ["専門リーダー", "60"]]), prompt: "---", class: "input-field-time") %>
-  </div>
-  <div>
-    <%= label_tag(:incomplete_status, "履修の未完", class: "input-label") %>
-    <%= select_tag(:incomplete_status, options_for_select([["未", "incomplete"], ["完", "complete"]]), prompt: "---", class: "input-field-pull") %>
-  </div>
-  
-  <%= submit_tag("検索", class: "search-button") %>
-  </div>
-<% end %>
-
-
-<div class="mypages">
-  <table>
-    <tr>
-      <th>名前</th>
-      <th>幼稚園</th>
-      <th>ランク</th>
-      <th>履修</th>
-    </tr>
-    <tr>
-      <td><%= link_to "名前1", "リンク先URL", class: "user_mypages" %></td>
-      <td class="user_mypages" >幼稚園1</td>
-      <td class="user_mypages">ランク1</td>
-      <td class="user_mypages">履修1</td>
-    </tr>
-    <tr>
-      <td><%= link_to "名前2", "リンク先URL" , class: "user_mypages" %></td>
-      <td class="user_mypages">幼稚園2</td>
-      <td class="user_mypages">ランク2</td>
-      <td class="user_mypages">履修2</td>
-    </tr>
-       <%# @user.each do |user| %>
-      <tr>
-        <td><%#= link_to user.name, child_path(child) , class: user_mypages %></td>
-        <td><%#= user.kindergarten %></td>
-        <td><%#= user.rank %></td>
-        <td><%#= user.enrollment %></td>
-      </tr>
-    <%# end %>
-  </table>
-</div>
-
-
-

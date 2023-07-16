@@ -41,9 +41,8 @@ a {
 .header {
   background-color: #cbf3f2;
   width: 100%;
-  margin-bottom: 48px;
   padding: 20px 0;
-
+  margin-bottom: 50px;
 }
 .header .nav {
   display: flex;
@@ -60,7 +59,7 @@ a {
   justify-content: space-between;
 }
 .logo {
-  width: 200px;
+  width: 50px;
 }
 .nav__btn{
   display: inline-block;
@@ -80,6 +79,11 @@ a {
 }
 
 .nav__logout{
+<<<<<<< Updated upstream
+=======
+  margin-right: 20px;
+  font-weight: bold;
+>>>>>>> Stashed changes
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -91,7 +95,30 @@ a {
   opacity: 0.5;
 }
 
+<<<<<<< Updated upstream
 /* トップぺージ */
+=======
+.greeting__link:hover{
+  opacity: 0.5;
+  color: #080808;
+}
+.greeting__link {
+  color: #080808;
+  text-decoration: none;
+}
+.greeting {
+  margin-bottom: 50px;
+  
+}
+/* トップページ */
+
+.my-img {
+  width: auto;
+  height: 800px;
+  opacity: 0.5;
+}
+/* newページ */
+>>>>>>> Stashed changes
 
 .input-container {
   display: flex;
@@ -128,8 +155,88 @@ a {
 .headersearch-button {
   height: 30px;
 }
+<<<<<<< Updated upstream
 @media screen and (min-width: 768px) {
   .search-input {
     flex-direction: row;
+=======
+
+/* ユーザーページ */
+.user__wrapper{
+  min-height: calc(100vh - 161px);
+}
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table__col1{
+  text-align: left;
+  font-weight: bold;
+  background: #f0cbcb;
+  border-collapse: collapse;
+  border: 1px solid #f7eded;
+  border-radius: 10px;
+  width: 30%;
+  padding: 8px;
+}
+.table__col2{
+  text-align: left;
+  background: #faf4f4;
+  border: 1px solid #faf1f1;
+  border-radius: 10px;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 16px 8px;
+}
+.user__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .prototype_image{
+    width: 60%;
+  }
+}
+
+ /* スマホ表示 */
+@media (max-width: 599px) {
+  .logo {
+    width: 120px;
+  }
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
+  .prototype_image{
+    width: 100%;
+  }
+  .table{
+    width: 100%;
+>>>>>>> Stashed changes
   }
 }

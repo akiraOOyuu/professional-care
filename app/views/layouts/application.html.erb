@@ -15,21 +15,36 @@
         <div class="nav">
             <div class="nav">
           <div class="nav__left">
-            <%#= link_to image_tag("logo.png", class: :logo), prototypes_path %>
+            <%= link_to image_tag("melon.png", class: :logo), root_path %>
           </div>
+<<<<<<< Updated upstream
             <%# ログインしているときは以下を表示するようにしましょう %>
           <div class="nav__right"> 
                <%= link_to "ログアウト",  class: :nav__logout %>
                <%= link_to "New Proto",  class: :nav__btn %>
              </div> 
             <%# // ログインしているときは上記を表示するようにしましょう %>
+=======
+            <%# ログインしているときは以下を表示 %>
+            <% if user_signed_in? %>
+          <div class="nav__right"> 
+               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+             </div> 
+            <% else %>
+            <%# // ログインしているときは上記を表示 %>
+>>>>>>> Stashed changes
 
-            <%# ログインしていないときは以下を表示するようにしましょう %>
+            <%# ログインしていないときは以下を表示 %>
             <div class="nav__right">
               <%= link_to "ログイン",  class: :nav__btn %>
               <%= link_to "新規登録",  class: :nav__btn %>
             </div>
+<<<<<<< Updated upstream
           <%# // ログインしていないときは上記を表示するようにしましょう %>
+=======
+             <%# // ログインしていないときは上記を表示 %>
+            <% end %>
+>>>>>>> Stashed changes
         </div>
      </div>
 
