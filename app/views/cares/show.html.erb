@@ -4,6 +4,7 @@
       <h2 class="page-heading">
         <%= @user.first_name %>
       </h2>
+      <div class="table_wrapper">
       <table class="table">
         <tbody>
           <tr>
@@ -28,6 +29,28 @@
           </tr>
         </tbody>
       </table>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">就業日</th>
+            <td class="table__col2"><%= @user_category.employment %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">所属園</th>
+            <td class="table__col2"><%= @user_category.affiliation %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">リーダー</th>
+            <td class="table__col2"><%= Rank.find(@user_category.rank_id).name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">履修</th>
+            <td class="table__col2"><%= Complete.find(@user_category.complete_id).name %></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      </div>
       <h2 class="page-heading">
         <%= @user.last_name + " " + @user.first_name %>
         さんの講習一覧

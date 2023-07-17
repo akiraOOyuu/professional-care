@@ -156,7 +156,22 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.table {
+  margin-bottom: 10px; /* 下側にマージンを設定 */
+  max-width: 500px
+}
+.table_wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 768px) {
+  .table_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 /* タブレット対応 */
 @media (max-width: 1024px) {

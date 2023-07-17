@@ -2,19 +2,18 @@
   <div class="back-ground-img">
  <%= image_tag("/assets/background.png", alt: "画像の説明", class: "my-img") %>
     <%# ログインしているときは以下を表示する %>
-    <%  if user_signed_in? %>
      <div class="greeting">
        こんにちは、
-         <%= link_to  current_user.first_name, user_path(current_user),class: :greeting__link%>
+         <%= link_to  current_user.first_name, cares_path(current_user),class: :greeting__link%>
          さん
       </div> 
-    
     <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
       <%# リンク %>
-      <%= link_to "マイページ", user_path(current_user), class: :nav__btn %>
-      <%= link_to '登録情報編集',  edit_user_registration_path , class: :nav__btn%>
-      <%= link_to "詳細内容登録", new_care_path, class: :nav__btn %>
-      <% end %>
+      <%= link_to "マイページ", care_path(current_user), class: :nav__btn %>
+      <%= link_to '登録情報編集',  edit_user_registration_path , class: :nav__btn%>  
+
+        <%= link_to "詳細内容編集", care_path(@user_category), method: :patch, class: :nav__btn %>
+        <%= link_to "詳細内容登録", new_care_path, class: :nav__btn %>
     </div>
   </div>

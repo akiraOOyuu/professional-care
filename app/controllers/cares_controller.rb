@@ -1,19 +1,39 @@
 class CaresController < ApplicationController
   def index
     @user = User.all
-
+    @user_category = UserCategory.all
   end
   def new
     @user_category = UserCategory.new
   end
+  def show
+    @user = User.find(params[:id])
+    @name = @user.first_name
+    @user_id = @user.id
+    @user_category = @user.user_category
+
+end
   def create
     @user_category = UserCategory.new(user_category_params)
-  binding.pry
     if @user_category.save
       redirect_to root_path
       
     else
       render :new
+    end
+  end
+   
+  def edit
+    @user_category = UserCategory.find(params[:id])
+  end
+
+  def update
+    user_category = UserCategory.find(params[:id])
+    user_category.update(user_category_params)
+    if @user_category.save
+    redirect_to prototype_path
+    else
+      render :edit
     end
   end
 
