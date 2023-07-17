@@ -7,12 +7,10 @@ class CaresController < ApplicationController
     @user_category = UserCategory.new
   end
   def show
-    @user = User.find(params[:id])
-    @name = @user.first_name
-    @user_id = @user.id
-    @user_category = @user.user_category
+    @user_category = UserCategory.find(params[:id])
+  end
+  
 
-end
   def create
     @user_category = UserCategory.new(user_category_params)
     if @user_category.save
@@ -25,11 +23,13 @@ end
    
   def edit
     @user_category = UserCategory.find(params[:id])
+    @user = @user_category.user
   end
 
   def update
-    user_category = UserCategory.find(params[:id])
-    user_category.update(user_category_params)
+   
+    @user_category = UserCategory.find(params[:id])
+    @user_category.update(user_category_params)
     if @user_category.save
     redirect_to prototype_path
     else
@@ -40,6 +40,7 @@ end
   private
 
   def user_category_params
+   
     params.require(:user_category).permit(:employment, :affiliation, :rank_id, :complete_id).merge(user_id: current_user.id)
   end
   # def search
