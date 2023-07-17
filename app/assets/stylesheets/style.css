@@ -156,6 +156,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .table {
   margin-bottom: 10px; /* 下側にマージンを設定 */
   max-width: 500px

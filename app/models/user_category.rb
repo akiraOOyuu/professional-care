@@ -1,5 +1,6 @@
 class UserCategory < ApplicationRecord
 
+  belongs_to :user
 
   with_options presence: true do
     validates :employment
@@ -9,5 +10,5 @@ class UserCategory < ApplicationRecord
   validates :rank_id, numericality: { other_than: 1 , message: "can't be blank"}
   validates :complete_id, numericality: { other_than: 1 , message: "can't be blank"}
   
-  belongs_to :user
+ 
 end
