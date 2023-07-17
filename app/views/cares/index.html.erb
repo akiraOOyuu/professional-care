@@ -10,10 +10,11 @@
     <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
       <%# リンク %>
-      <%= link_to "マイページ", care_path(current_user), class: :nav__btn %>
-      <%= link_to '登録情報編集',  edit_user_registration_path , class: :nav__btn%>  
 
-        <%= link_to "詳細内容編集", care_path(@user_category), method: :patch, class: :nav__btn %>
+      <%= link_to "マイページ", care_path( user_category.id), method: :get, class: :nav__btn %>
+      <%= link_to '登録情報編集',  edit_user_registration_path , class: :nav__btn%>  
+ 
+        <%= link_to "詳細内容編集", edit_care_path(@user_category.id), method: :get, class: :nav__btn %>
         <%= link_to "詳細内容登録", new_care_path, class: :nav__btn %>
     </div>
   </div>
