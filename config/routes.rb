@@ -3,9 +3,7 @@ Rails.application.routes.draw do
 
   root to: "cares#index"
 
-  resources :cares, only: [:index, :new, :create] do
-    resources :index
-  end
+  resources :cares, only: [:index, :new, :create, :lecture_new, :lecture_create]
 
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
 end
