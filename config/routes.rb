@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "cares#index"
 
   resources :cares, only: [:index, :new, :create] do
-    resources :users, only: [:edit, :update]
+    resources :index
   end
 
   resources :users, only: :show
