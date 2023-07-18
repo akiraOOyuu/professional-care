@@ -16,10 +16,21 @@ class CaresController < ApplicationController
     end
   end
 
+  def lecture_new
+    @lecture = Lecture.new
+  end
+  def lecture_create
+    @lecture = Lecture.new(lecture_params)
+  end
+
   private
 
   def user_category_params
     params.require(:user_category).permit(:employment, :affiliation, :rank_id, :complete_id).merge(user_id: current_user.id)
+  end
+
+  def lecture_params
+    params.require(:lecture).permit(:field_id, :lecture_name, :lecture_day, :lecture_time, :instructor_name).marge(user_id: current_user.id)
   end
   # def search
   #   query = params[:query]
