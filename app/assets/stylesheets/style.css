@@ -69,12 +69,17 @@
   color: #080808;
 }
 .greeting__link {
-  color: #080808;
+  font-size: 50px;
+  color: #444141f6;
   text-decoration: none;
 }
 .greeting {
+  margin-left: 50px;
   margin-bottom: 50px;
   
+}
+.card__wrapper {
+  margin-left: 50px;
 }
 
 .my-img {
@@ -125,6 +130,7 @@
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
+  margin-left: 20px;
 }
 .table{
   border-collapse: collapse;
