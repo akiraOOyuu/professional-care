@@ -21,6 +21,12 @@ class CaresController < ApplicationController
   end
   def lecture_create
     @lecture = Lecture.new(lecture_params)
+    if @lecture.save
+      redirect_to root_path
+      
+    else
+      render :lecture_new
+    end
   end
 
   private
@@ -30,7 +36,7 @@ class CaresController < ApplicationController
   end
 
   def lecture_params
-    params.require(:lecture).permit(:field_id, :lecture_name, :lecture_day, :lecture_time, :instructor_name).marge(user_id: current_user.id)
+    params.require(:lecture).permit(:field_id, :lecture_name, :lecture_day, :lecture_time, :instructor_name).merge(user_id: current_user.id)
   end
   # def search
   #   query = params[:query]

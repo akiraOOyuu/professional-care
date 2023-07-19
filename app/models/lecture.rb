@@ -12,7 +12,7 @@ class Lecture < ApplicationRecord
     validates :lecture_time, format: { with: /\A[0-9]+\z/}
   end
 
-  validates :field_id, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :field_id, numericality: { other_than: 1, message: "can't be blank" }
   
  
 end
