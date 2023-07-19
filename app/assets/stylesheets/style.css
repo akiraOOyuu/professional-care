@@ -1,7 +1,7 @@
 /* ヘッダー */
 
 .header {
-  background-color: #2c1f02;
+  background-color: #2c1f02f1;
   width: 100%;
   padding: 20px 0;
 }
@@ -29,7 +29,7 @@
   padding: 0.8em 1.6em;
   font-size: 0.8em;
   font-weight: bold;
-  color: #6b4304;
+  color: #b4974f;
   text-decoration: none;
   user-select: none;
   border: 1px #92670b solid;
@@ -47,7 +47,7 @@
   margin-right: 20px;
   font-weight: bold;
   display: inline-block;
-  color: #694904;
+  color: #b4974f;
   border: 1px #92670b solid;
   opacity: 0.7;
   padding: 0.8em 1.6em;
@@ -149,18 +149,18 @@
 .table__col1{
   text-align: left;
   font-weight: bold;
-  background: #f0cbcb;
+  background: #d4be84;
   border-collapse: collapse;
-  border: 1px solid #f7eded;
-  border-radius: 10px;
+  border-bottom: 1px solid #faf4f4;
+  border-radius: 8px 0  0 8px;
   width: 30%;
   padding: 8px;
 }
 .table__col2{
   text-align: left;
   background: #faf4f4;
-  border: 1px solid #faf1f1;
-  border-radius: 10px;
+  border-bottom: 1px solid #d4be84;
+  border-radius: 0 8px 8px 0 ;
   border-collapse: collapse;
   width: 70%;
   padding: 16px 8px;
@@ -181,6 +181,67 @@
   display: flex;
   justify-content: space-around;
 }
+.page-lecture {
+  display: flex;
+  padding: 0 20px;
+  margin: 20px;
+}
+
+.my_page__btn{
+  margin: 10px 30px;
+  height: 40px;
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #b4974f;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #92670b solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.my_page__btn:hover{
+  color: #fff;
+  background: #7c6945;
+}
+/* ユーザーページ＝講習一覧 */
+.total-time {
+  display: flex;
+  align-items: center;
+}
+.user__card {
+  width: 100%;
+}
+
+.lecture_col1 {
+  border-collapse: collapse;
+  border-radius: 8px 0  0 8px;
+  max-width: 200px;
+}
+.lecture_col2 {
+  min-width: 100px;
+  max-width: 500px;
+  border-radius: 0 8px 8px 0 ;
+}
+.lecture_col1, .lecture_col2 {
+  border: 1px solid #dac9c2;
+  padding: 10px;
+}
+.colo_edit {
+  border: 1px solid #e9a4a4;
+  border-radius: 5px;
+}
+.edit_nav__btn {
+  color: #080808;
+  text-decoration: none;
+}
+.edit_nav__btn:hover {
+  color: #641111;
+  opacity: 0.8;
+}
+
 /*PC設定*/
 @media screen and (max-width: 768px) {
   .table_wrapper {

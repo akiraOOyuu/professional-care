@@ -1,25 +1,24 @@
 <div class="card">
 
   <div class='item-info'>
-  <table>
-    <%# @user.each do |user| %>
+
+   <% @lecture.each do |lecture| %>
+  <table class="lecture-table">
     <tr>
-        <th class="lecture_col1">分野</th>
-        <td class="lecture_col2"><%= "幼児教育" %></td>
-        <th class="lecture_col1">講義名</th>
-        <td class="lecture_col2"><%= @user.last_name + " " + @user.first_name + "(" + @user.last_name_reading + @user.first_name_reading + ")" %></td>
-        <th class="lecture_col1">講義時間</th>
-        <td class="lecture_col2"><%= WorkerPrefecture.find(@user.worker_prefecture_id).name %></td>
+     <th class="colo_edit"><%= link_to "編集", root_path, method: :patch, class: :edit_nav__btn %></th>
+   
         <th class="lecture_col1">受講日</th>
-        <td class="lecture_col2"><%= @user.childcare_worker_number %></td>
+        <td class="lecture_col2"><%= lecture.lecture_day %></td>
+        <th class="lecture_col1">分野</th>
+        <td class="lecture_col2"><%= Field.find(lecture.field_id).name %></td>
+        <th class="lecture_col1">講義名</th>
+        <td class="lecture_col2"><%= lecture.lecture_name %></td>
         <th class="lecture_col1">講師名</th>
-        <td class="lecture_col2"><%= "講師名" %></td>
-         <th class="lecture_col1">時間</th>
-        <td class="lecture_col2"><%= "時間" %></td>
-    </tr>
-  </table>
-  <%# end%>
-  <div class ="total">時間
-  </div>
-  </div>
+        <td class="lecture_col2"><%= lecture.instructor_name %></td>
+        <th class="lecture_col1">講義時間</th>
+        <td class="lecture_col2"><%= lecture.lecture_time %>　分</td>
+     </tr>
+       
+  </table> 
+  <% end %>
 </div>

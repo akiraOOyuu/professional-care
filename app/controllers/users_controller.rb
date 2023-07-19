@@ -5,7 +5,9 @@ class UsersController < ApplicationController
       @name = @user.first_name
       @user_id = @user.id
       @user_category = @user.user_category
+      @lecture = @user.lectures
  end
+
   
   def edit
   end

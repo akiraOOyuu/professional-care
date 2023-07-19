@@ -11,7 +11,7 @@
 
 ### Association
 
-- has_one :user_category
+- has_one :user_category, foreign_key: :user_id
 
 
 ## users テーブル
@@ -36,7 +36,7 @@
 ### Association
 
 - has_many :lectures
-- has_one :user_category
+- has_one :user_category, foreign_key: :user_id
 
 
 ## user_categories
