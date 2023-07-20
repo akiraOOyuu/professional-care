@@ -24,12 +24,12 @@
   width: 50px;
 }
 .nav__btn{
-  margin-right: 10px;
+  margin-right: 20px;
   display: inline-block;
   padding: 0.8em 1.6em;
   font-size: 0.8em;
   font-weight: bold;
-  color: #b4974f;
+  color: #584920;
   text-decoration: none;
   user-select: none;
   border: 1px #92670b solid;
@@ -213,6 +213,8 @@
 }
 .user__card {
   width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .lecture_col1 {
@@ -228,6 +230,10 @@
 .lecture_col1, .lecture_col2 {
   border: 1px solid #dac9c2;
   padding: 10px;
+}
+.lecture_col_field, .lecture_col_name {
+  border: 1px solid #dac9c2;
+  width: 250px;
 }
 .colo_edit {
   border: 1px solid #e9a4a4;

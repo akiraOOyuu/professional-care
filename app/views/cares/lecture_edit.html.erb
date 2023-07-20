@@ -1,5 +1,6 @@
-<%= form_with model: @lecture, url: lecture_create_cares_path, method: :post, class: 'registration-main', local: true do |f| %>
-        <div class="contents">
+  <%= form_with model: @lecture, url: lecture_update_care_path(@lecture), method: :patch, class: 'registration-main', local: true do |f| %>
+
+          <div class="contents">
           <div class='form-wrap'>
        
         <div class="form-group">
@@ -16,7 +17,7 @@
           <label class="form-text">研修分野</label>
           <span class="indispensable">必須</span>
         </div>
-         <%= f.select :field_id,  options_for_select(Field.pluck(:name, :id)), {}, { class: "select-box", id: "field" } %>
+         <%= f.select :field_id,  options_for_select(Field.pluck(:name, :id), @lecture.field_id), {}, { class: "select-box", id: "field" } %>
       </div>
       <div class="form-group">
       
@@ -66,5 +67,6 @@
       <div class='register-btn'>
     <%= f.submit "登録" ,class:"register-sub-btn" %>
     </div>
+     </div>
 </div>
 <% end %>

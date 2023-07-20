@@ -29,6 +29,18 @@ class CaresController < ApplicationController
     end
   end
 
+  def lecture_edit
+    @lecture = Lecture.find(params[:id])
+  end
+  def lecture_update
+    @lecture = Lecture.find(params[:id])
+    if @lecture.update(lecture_params)
+      redirect_to user_path(current_user)
+    else
+      render :lecture_edit
+    end
+  end
+
   private
 
   def user_category_params

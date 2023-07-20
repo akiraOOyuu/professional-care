@@ -5,14 +5,14 @@
    <% @lecture.each do |lecture| %>
   <table class="lecture-table">
     <tr>
-     <th class="colo_edit"><%= link_to "編集", root_path, method: :patch, class: :edit_nav__btn %></th>
+     <th class="colo_edit"><%= link_to "編集", lecture_edit_care_path(lecture), class: :edit_nav__btn %></th>
    
         <th class="lecture_col1">受講日</th>
         <td class="lecture_col2"><%= lecture.lecture_day %></td>
         <th class="lecture_col1">分野</th>
-        <td class="lecture_col2"><%= Field.find(lecture.field_id).name %></td>
+        <td class="lecture_col_field"><%= Field.find(lecture.field_id).name %></td>
         <th class="lecture_col1">講義名</th>
-        <td class="lecture_col2"><%= lecture.lecture_name %></td>
+        <td class="lecture_col_name"><%= lecture.lecture_name %></td>
         <th class="lecture_col1">講師名</th>
         <td class="lecture_col2"><%= lecture.instructor_name %></td>
         <th class="lecture_col1">講義時間</th>
