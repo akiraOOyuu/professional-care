@@ -11,6 +11,7 @@ Rails.application.routes.draw do
      member do
     get :lecture_edit
     patch :lecture_update
+    delete :lecture_delete
   end
   end
 

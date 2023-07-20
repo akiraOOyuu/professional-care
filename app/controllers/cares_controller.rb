@@ -40,6 +40,11 @@ class CaresController < ApplicationController
       render :lecture_edit
     end
   end
+  def lecture_delete
+      lecture = Lecture.find(params[:id])
+      lecture.destroy
+      redirect_to user_path(current_user)
+  end
 
   private
 

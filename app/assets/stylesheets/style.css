@@ -240,10 +240,19 @@
   border-radius: 5px;
 }
 .edit_nav__btn {
-  color: #080808;
+  color: #152a58;
   text-decoration: none;
 }
+
 .edit_nav__btn:hover {
+  color: rgb(54, 164, 238);
+  opacity: 0.8;
+}
+.delete_nav__btn {
+  color: rgb(238, 12, 12);
+  text-decoration: none;
+}
+.delete_nav__btn:hover {
   color: #641111;
   opacity: 0.8;
 }
