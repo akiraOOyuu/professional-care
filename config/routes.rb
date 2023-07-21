@@ -4,8 +4,16 @@ Rails.application.routes.draw do
   root to: "cares#index"
 
   resources :cares, only: [:index, :new, :create] do
-    resources :users, only: [:edit, :update]
+    collection do
+      get :lecture_new
+      post :lecture_create
+    end
+     member do
+    get :lecture_edit
+    patch :lecture_update
+    delete :lecture_delete
+  end
   end
 
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
 end

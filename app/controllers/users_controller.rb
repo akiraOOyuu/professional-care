@@ -5,9 +5,9 @@ class UsersController < ApplicationController
       @name = @user.first_name
       @user_id = @user.id
       @user_category = @user.user_category
+      @lecture = @user.lectures
+      @lecture = Lecture.includes(:user).order("lecture_day DESC")
  end
-  
-  def edit
-  end
+
 end
 

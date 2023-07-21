@@ -1,10 +1,9 @@
 /* ヘッダー */
 
 .header {
-  background-color: #bff5dc;
+  background-color: #2c1f02f1;
   width: 100%;
   padding: 20px 0;
-  margin-bottom: 50px;
 }
 .header .nav {
   display: flex;
@@ -25,22 +24,24 @@
   width: 50px;
 }
 .nav__btn{
-  margin-right: 10px;
+  margin-right: 20px;
   display: inline-block;
   padding: 0.8em 1.6em;
   font-size: 0.8em;
   font-weight: bold;
-  color: #14242e;
+  color: #e9cf89;
   text-decoration: none;
   user-select: none;
-  border: 1px #559dc9 solid;
+  border: 1px #92670b solid;
+  background-color: #55400a;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 
 .nav__btn:hover{
-  color: #fff;
-  background: #87CEFA;
+  opacity: 0.7;
+  color: #352727;
+  background: #7c6945;
 }
 
 .nav__logout{
@@ -48,8 +49,10 @@
   margin-right: 20px;
   font-weight: bold;
   display: inline-block;
-  color: #14242e;
-  border: 1px #559dc9 solid;
+  border-radius: 5px;
+  color: #e9cf89;
+  border: 1px #92670b solid;
+  background-color: #55400a;
   opacity: 0.7;
   padding: 0.8em 1.6em;
   font-size: 0.8em;
@@ -57,10 +60,11 @@
   user-select: none;
 }
 .nav__logout:hover{
-  opacity: 0.5;
-  color: #fff;
-  background: #87CEFA;
+  opacity: 0.7;
+  color: #352727;
+  background: #f1b32c;
 }
+
 
 /* トップぺージ */
 
@@ -81,11 +85,39 @@
 .card__wrapper {
   margin-left: 50px;
 }
+.top-contents {
+  position: absolute;
+  top: 80%;
+  left: 20%;
+}
 
 .my-img {
-  width: auto;
-  height: 800px;
-  opacity: 0.5;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.6;
+}
+.nav_top__btn{
+  margin-right: 20px;
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #faf9f5;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #92670b solid;
+  background-color: #c5b158;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.nav_top__btn:hover{
+  opacity: 0.8;
+  color: #faf9f5;
+  color: #140d0d;
+  background: #ccb891;
 }
 /* newページ */
 
@@ -128,9 +160,24 @@
 
 
 /* ユーザーページ */
+
+
+.inner_sub {
+  background-image: url("/assets/clay.jpg");
+  background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+  background-size: cover; /* 背景画像を要素に合わせて拡大・縮小する */
+  background-position: center; /* 背景画像の位置を中央に指定する */
+  opacity: 0.8;
+}
+
 .user__wrapper{
   min-height: calc(100vh - 161px);
   margin-left: 20px;
+  font-weight: bold;
+}
+.page-name {
+  font-size: 30px;
+  padding-top: 20px;
 }
 .table{
   border-collapse: collapse;
@@ -139,19 +186,18 @@
 }
 .table__col1{
   text-align: left;
-  font-weight: bold;
-  background: #f0cbcb;
+  background: rgba(212, 190, 132, 0.9);
   border-collapse: collapse;
-  border: 1px solid #f7eded;
-  border-radius: 10px;
+  border-bottom: 1px solid #faf4f4;
+  border-radius: 8px 0  0 8px;
   width: 30%;
   padding: 8px;
 }
 .table__col2{
   text-align: left;
-  background: #faf4f4;
-  border: 1px solid #faf1f1;
-  border-radius: 10px;
+  background: rgba(250, 244, 244, 0.8);
+  border-bottom: 1px solid #d4be84;
+  border-radius: 0 8px 8px 0 ;
   border-collapse: collapse;
   width: 70%;
   padding: 16px 8px;
@@ -164,14 +210,110 @@
 }
 
 .table {
-  margin-bottom: 10px; /* 下側にマージンを設定 */
+  margin-bottom: 10px;
   max-width: 500px
 }
 .table_wrapper{
+  padding-top: 50px;
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
+.page-heading {
+  font-size: 30px;
+}
+.page-lecture {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin: 20px;
+  border-radius: 15px;
+  border: 1px #e0da7b solid;
+  background: rgba(250, 244, 244, 0.6);
+}
+
+.my_page__btn{
+  margin: 10px 30px;
+  height: 40px;
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #0f0b02;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #92670b solid;
+  background-color: #eedba5;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.my_page__btn:hover{
+  color: #fff;
+  background: #7c6945;
+}
+/* ユーザーページ＝講習一覧 */
+.total-time {
+  display: flex;
+  align-items: center;
+}
+.item_info {
+  display: flex;
+  justify-content: space-around
+}
+.user__card {
+  width: 100%;
+}
+.lecture-table {
+  width: 100%;
+  margin-left: 50px;
+}
+.lecture_col1 {
+  border-collapse: collapse;
+  background: rgba(170, 144, 73, 0.8);
+  border-radius: 8px 0  0 8px;
+  max-width: 200px;
+}
+.lecture_col2 {
+  min-width: 100px;
+  max-width: 500px;
+  background: rgba(250, 244, 244, 0.8);
+  border-radius: 0 8px 8px 0 ;
+}
+.lecture_col1, .lecture_col2 {
+  border: 1px solid #dac9c2;
+  padding: 10px;
+}
+.lecture_col_field, .lecture_col_name {
+  border: 1px solid #dac9c2;
+  background: rgba(250, 244, 244, 0.8);
+  border-radius: 0 8px 8px 0 ;
+  width: 250px;
+}
+.colo_edit {
+  border: 1px solid #7c6945;
+  background: rgba(250, 244, 244, 0.8);
+  border-radius: 5px;
+}
+.edit_nav__btn {
+  color: #020b20;
+  text-decoration: none;
+}
+
+.edit_nav__btn:hover {
+  color: rgb(38, 152, 228);
+  opacity: 0.8;
+}
+.delete_nav__btn {
+  color: rgb(255, 5, 5);
+  text-decoration: none;
+}
+.delete_nav__btn:hover {
+  color: #641111;
+  opacity: 0.8;
+}
+
+/*PC設定*/
 @media screen and (max-width: 768px) {
   .table_wrapper {
     display: flex;

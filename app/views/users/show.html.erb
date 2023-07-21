@@ -1,9 +1,9 @@
 <div class="main">
-  <div class="inner">
+  <div class="inner_sub">
     <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= @user.first_name %>
-      </h2>
+      <div class="page-name">
+        <%= @user.first_name %>さんの My page
+      </div>
        <div class="table_wrapper">
        <table class="table">
         <tbody>
@@ -21,11 +21,13 @@
           </tr>
           <tr>
             <th class="table__col1">就職日</th>
-            <td class="table__col2"><%= "就職日" %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">役職</th>
-            <td class="table__col2"><%= "ランク" %></td>
+            <td class="table__col2">
+              <% if @user_category %>
+                <%= @user_category.employment %>
+              <% else %>
+                表示なし
+              <% end %>
+              </td>
           </tr>
         </tbody>
       </table>
@@ -34,28 +36,55 @@
         <tbody>
           <tr>
             <th class="table__col1">就業日</th>
-            <td class="table__col2"><%= @user_category.employment %></td>
+            <td class="table__col2">
+             <% if @user_category %>
+               <%= @user_category.employment %>
+             <% else %>
+               表示なし
+             <% end %>
+            </td>
           </tr>
           <tr>
             <th class="table__col1">所属園</th>
-            <td class="table__col2"><%= @user_category.affiliation %></td>
+            <td class="table__col2">
+              <% if @user_category %>
+                <%= @user_category.affiliation %>
+              <% else %>
+                表示なし
+              <% end %>
+            </td>
           </tr>
           <tr>
             <th class="table__col1">リーダー</th>
-            <td class="table__col2"><%= Rank.find(@user_category.rank_id).name %></td>
+            <td class="table__col2">
+              <% if @user_category && @user_category.rank_id %>
+               <%= Rank.find(@user_category.rank_id).name %>
+              <% else %>
+                表示なし
+              <% end %>
+            </td>
           </tr>
           <tr>
             <th class="table__col1">履修</th>
-            <td class="table__col2"><%= Complete.find(@user_category.complete_id).name %></td>
+            <td class="table__col2">
+              <% if @user_category && @user_category.complete_id %>
+                <%= Complete.find(@user_category.complete_id).name %>
+              <% else %>
+                表示なし
+              <% end %>
+            </td>
           </tr>
           
         </tbody>
       </table>
       </div>
-      <h2 class="page-heading">
-        <%= @user.last_name + " " + @user.first_name %>
-        さんの講習一覧
-      </h2>
+      <div class="page-lecture">
+        <h2 class="page-heading">
+        講習一覧
+        </h2>
+        <%= link_to "講習内容追加",  lecture_new_cares_path, class: :my_page__btn %>
+        <p id="total-time">合計時間: 0 分</p>
+      </div>
       <div class="user__card">
         <%= render "cares/lecture" %> 
       </div>

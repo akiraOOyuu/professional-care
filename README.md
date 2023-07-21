@@ -11,7 +11,7 @@
 
 ### Association
 
-- has_one :user_category
+- has_one :user_category, foreign_key: :user_id
 
 
 ## users テーブル
@@ -36,7 +36,7 @@
 ### Association
 
 - has_many :lectures
-- has_one :user_category
+- has_one :user_category, foreign_key: :user_id
 
 
 ## user_categories
@@ -44,7 +44,7 @@
 
 | Colum                | Type      | Option                       |
 |----------------------|-----------|------------------------------|
-| employment           |data       |null: false , unique: true    |
+| employment           |date       |null: false , unique: true    |
 | affiliation          |string     |null: false                   |
 | rank_id              |integer    |null: false                   |
 | complete_id          |integer    |null: false                   |
@@ -62,9 +62,9 @@
 |--------------------|-----------|------------------------------|
 | field_id           |integer    |null: false                   |
 | lecture_name       |string     |null: false                   |
-| lecture_day        |data       |null: false                   |
 | lecture_time       |string     |null: false                   |
 | instructor_name    |string     |null: false                   |
+| lecture_day        |date       |null: false                   |
 | user               |references |null: false, foreign_key: true|
 
 ### Association

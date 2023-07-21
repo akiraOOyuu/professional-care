@@ -140,15 +140,19 @@
   margin: 0 auto;
 }
 
-.register-red-btn, .login-red-btn {
+.register-sub-btn, .login-sub-btn {
   margin-top: 30px;
   width: 100%;
-  background: #7bf0f0;
-  border: 1px solid #79fa84;
+  background: #534207;
+  border: 1px solid  #92670b;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+}
+.register-sub-btn:hover, .login-sub-btn:hover {
+  color: #fff;
+  background: #7c6945;
 }
 
 .register-info {
