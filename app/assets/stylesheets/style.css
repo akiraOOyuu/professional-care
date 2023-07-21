@@ -29,16 +29,18 @@
   padding: 0.8em 1.6em;
   font-size: 0.8em;
   font-weight: bold;
-  color: #584920;
+  color: #e9cf89;
   text-decoration: none;
   user-select: none;
   border: 1px #92670b solid;
+  background-color: #55400a;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 
 .nav__btn:hover{
-  color: #fff;
+  opacity: 0.7;
+  color: #352727;
   background: #7c6945;
 }
 
@@ -47,8 +49,10 @@
   margin-right: 20px;
   font-weight: bold;
   display: inline-block;
-  color: #b4974f;
+  border-radius: 5px;
+  color: #e9cf89;
   border: 1px #92670b solid;
+  background-color: #55400a;
   opacity: 0.7;
   padding: 0.8em 1.6em;
   font-size: 0.8em;
@@ -56,13 +60,11 @@
   user-select: none;
 }
 .nav__logout:hover{
-  opacity: 0.6;
-  color: #fff;
+  opacity: 0.7;
+  color: #352727;
   background: #f1b32c;
 }
-.main, .contents{
-  margin-top: 50px;
-}
+
 
 /* トップぺージ */
 
@@ -95,6 +97,27 @@
   height: 100vh;
   object-fit: cover;
   opacity: 0.6;
+}
+.nav_top__btn{
+  margin-right: 20px;
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #faf9f5;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #92670b solid;
+  background-color: #c5b158;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.nav_top__btn:hover{
+  opacity: 0.8;
+  color: #faf9f5;
+  color: #140d0d;
+  background: #ccb891;
 }
 /* newページ */
 
@@ -137,9 +160,24 @@
 
 
 /* ユーザーページ */
+
+
+.inner_sub {
+  background-image: url("/assets/clay.jpg");
+  background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+  background-size: cover; /* 背景画像を要素に合わせて拡大・縮小する */
+  background-position: center; /* 背景画像の位置を中央に指定する */
+  opacity: 0.8;
+}
+
 .user__wrapper{
   min-height: calc(100vh - 161px);
   margin-left: 20px;
+  font-weight: bold;
+}
+.page-name {
+  font-size: 30px;
+  padding-top: 20px;
 }
 .table{
   border-collapse: collapse;
@@ -148,8 +186,7 @@
 }
 .table__col1{
   text-align: left;
-  font-weight: bold;
-  background: #d4be84;
+  background: rgba(212, 190, 132, 0.9);
   border-collapse: collapse;
   border-bottom: 1px solid #faf4f4;
   border-radius: 8px 0  0 8px;
@@ -158,7 +195,7 @@
 }
 .table__col2{
   text-align: left;
-  background: #faf4f4;
+  background: rgba(250, 244, 244, 0.8);
   border-bottom: 1px solid #d4be84;
   border-radius: 0 8px 8px 0 ;
   border-collapse: collapse;
@@ -173,18 +210,26 @@
 }
 
 .table {
-  margin-bottom: 10px; /* 下側にマージンを設定 */
+  margin-bottom: 10px;
   max-width: 500px
 }
 .table_wrapper{
+  padding-top: 50px;
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
+.page-heading {
+  font-size: 30px;
+}
 .page-lecture {
   display: flex;
+  align-items: center;
   padding: 0 20px;
   margin: 20px;
+  border-radius: 15px;
+  border: 1px #e0da7b solid;
+  background: rgba(250, 244, 244, 0.6);
 }
 
 .my_page__btn{
@@ -194,10 +239,11 @@
   padding: 0.8em 1.6em;
   font-size: 0.8em;
   font-weight: bold;
-  color: #b4974f;
+  color: #0f0b02;
   text-decoration: none;
   user-select: none;
   border: 1px #92670b solid;
+  background-color: #eedba5;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -211,20 +257,27 @@
   display: flex;
   align-items: center;
 }
+.item_info {
+  display: flex;
+  justify-content: space-around
+}
 .user__card {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
 }
-
+.lecture-table {
+  width: 100%;
+  margin-left: 50px;
+}
 .lecture_col1 {
   border-collapse: collapse;
+  background: rgba(170, 144, 73, 0.8);
   border-radius: 8px 0  0 8px;
   max-width: 200px;
 }
 .lecture_col2 {
   min-width: 100px;
   max-width: 500px;
+  background: rgba(250, 244, 244, 0.8);
   border-radius: 0 8px 8px 0 ;
 }
 .lecture_col1, .lecture_col2 {
@@ -233,23 +286,26 @@
 }
 .lecture_col_field, .lecture_col_name {
   border: 1px solid #dac9c2;
+  background: rgba(250, 244, 244, 0.8);
+  border-radius: 0 8px 8px 0 ;
   width: 250px;
 }
 .colo_edit {
-  border: 1px solid #e9a4a4;
+  border: 1px solid #7c6945;
+  background: rgba(250, 244, 244, 0.8);
   border-radius: 5px;
 }
 .edit_nav__btn {
-  color: #152a58;
+  color: #020b20;
   text-decoration: none;
 }
 
 .edit_nav__btn:hover {
-  color: rgb(54, 164, 238);
+  color: rgb(38, 152, 228);
   opacity: 0.8;
 }
 .delete_nav__btn {
-  color: rgb(238, 12, 12);
+  color: rgb(255, 5, 5);
   text-decoration: none;
 }
 .delete_nav__btn:hover {

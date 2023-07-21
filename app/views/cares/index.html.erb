@@ -12,12 +12,12 @@
       <div class="card__wrapper">
         <%# リンク %>
 
-        <%= link_to "マイページ", user_path(current_user.id), method: :get, class: :nav__btn %>
-        <%= link_to '登録情報編集',  edit_user_registration_path , class: :nav__btn%>  
+        <%= link_to "マイページ", user_path(current_user.id), method: :get, class: :nav_top__btn %>
+        <%= link_to '登録情報編集',  edit_user_registration_path , class: :nav_top__btn %>  
   
-          <%#= link_to "詳細内容編集", edit_care_path(current_user.id), method: :get, class: :nav__btn %>
-          <%= link_to "詳細内容登録", new_care_path, class: :nav__btn %>
-          <%= link_to "新規講習内容登録",  lecture_new_cares_path, class: :nav__btn %>
+          <%#= link_to "詳細内容編集", edit_care_path(current_user.id), method: :get, class: :nav_top__btn %>
+          <%= link_to "詳細内容登録", new_care_path, class: :nav_top__btn %>
+          <%= link_to "新規講習内容登録",  lecture_new_cares_path, class: :nav_top__btn %>
       </div>
     </div>
   </div>

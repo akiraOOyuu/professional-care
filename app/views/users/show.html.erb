@@ -1,9 +1,9 @@
 <div class="main">
-  <div class="inner">
+  <div class="inner_sub">
     <div class="user__wrapper">
-      <h2 class="page-heading">
+      <div class="page-name">
         <%= @user.first_name %>さんの My page
-      </h2>
+      </div>
        <div class="table_wrapper">
        <table class="table">
         <tbody>
@@ -83,7 +83,7 @@
         講習一覧
         </h2>
         <%= link_to "講習内容追加",  lecture_new_cares_path, class: :my_page__btn %>
-        <div class ="total-time"><h2>研修時間　合計<%#= "#{total}" %>時間</h2></div>
+        <p id="total-time">合計時間: 0 分</p>
       </div>
       <div class="user__card">
         <%= render "cares/lecture" %> 

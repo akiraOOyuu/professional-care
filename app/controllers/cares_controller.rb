@@ -22,7 +22,7 @@ class CaresController < ApplicationController
   def lecture_create
     @lecture = Lecture.new(lecture_params)
     if @lecture.save
-      redirect_to root_path
+      redirect_to user_path(current_user)
       
     else
       render :lecture_new
