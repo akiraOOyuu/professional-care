@@ -74,29 +74,43 @@
 }
 .greeting__link {
   font-size: 50px;
-  color: #444141f6;
+  color: #020000f6;
   text-decoration: none;
 }
+.top-main {
+  height: 100vh;
+  background-image: url("kindergarten.jpg");
+  background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+  background-size: cover; /* 背景画像を要素に合わせて拡大・縮小する */
+  background-position: center; /* 背景画像の位置を中央に指定する */
+  opacity: 0.7;
+}
 .greeting {
-  margin-left: 50px;
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 200px;
+  font-weight: bold;
   font-family: 'Noto Serif JP', serif;
 }
 .card__wrapper {
-  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 150px;
 }
 .top-contents {
-  position: absolute;
-  top: 80%;
-  left: 20%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
 }
 
+
 .my-img {
-  position: relative;
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .nav_top__btn{
   margin-right: 20px;
@@ -104,7 +118,7 @@
   padding: 0.8em 1.6em;
   font-size: 0.8em;
   font-weight: bold;
-  color: #faf9f5;
+  color: #2c291f;
   text-decoration: none;
   user-select: none;
   border: 1px #92670b solid;
@@ -115,9 +129,8 @@
 
 .nav_top__btn:hover{
   opacity: 0.8;
-  color: #faf9f5;
-  color: #140d0d;
-  background: #ccb891;
+  color: #f5f1ea;
+  background: #df9d0e;
 }
 /* newページ */
 
