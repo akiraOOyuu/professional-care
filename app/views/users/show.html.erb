@@ -47,8 +47,8 @@
           <tr>
             <th class="table__col1">実務年数</th>
             <td class="table__col2" id="total_year">
-            <div id="employmentDate" data-employment="<%= @user_category.employment.strftime('%Y-%m-%d') %>"></div>
              <% if @user_category %>
+             <div id="employmentDate" data-employment="<%= @user_category.employment.strftime('%Y-%m-%d') %>"></div>
                 <%= @user_category.employment %>
               <% else %>
                 表示なし
