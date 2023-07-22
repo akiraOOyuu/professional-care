@@ -1,4 +1,5 @@
 class CaresController < ApplicationController
+
   def index
     @user = current_user
     @user_category = @user.user_category
@@ -10,7 +11,6 @@ class CaresController < ApplicationController
     @user_category = UserCategory.new(user_category_params)
     if @user_category.save
       redirect_to root_path
-      
     else
       render :new
     end
