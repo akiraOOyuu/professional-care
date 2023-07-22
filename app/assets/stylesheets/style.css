@@ -80,7 +80,7 @@
 .greeting {
   margin-left: 50px;
   margin-bottom: 50px;
-  
+  font-family: 'Noto Serif JP', serif;
 }
 .card__wrapper {
   margin-left: 50px;
@@ -178,6 +178,8 @@
 .page-name {
   font-size: 30px;
   padding-top: 20px;
+  color: #55400a;
+  font-family: 'Open Sans', sans-serif;
 }
 .table{
   border-collapse: collapse;
