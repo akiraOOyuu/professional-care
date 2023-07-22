@@ -20,10 +20,10 @@
             <td class="table__col2"><%= @user.childcare_worker_number %></td>
           </tr>
           <tr>
-            <th class="table__col1">就職日</th>
+            <th class="table__col1">所属園</th>
             <td class="table__col2">
-              <% if @user_category %>
-                <%= @user_category.employment %>
+             <% if @user_category %>
+                <%= @user_category.affiliation %>
               <% else %>
                 表示なし
               <% end %>
@@ -45,13 +45,15 @@
             </td>
           </tr>
           <tr>
-            <th class="table__col1">所属園</th>
-            <td class="table__col2">
-              <% if @user_category %>
-                <%= @user_category.affiliation %>
+            <th class="table__col1">実務年数</th>
+            <td class="table__col2" id="total_year">
+            <div id="employmentDate" data-employment="<%= @user_category.employment.strftime('%Y-%m-%d') %>"></div>
+             <% if @user_category %>
+                <%= @user_category.employment %>
               <% else %>
                 表示なし
               <% end %>
+              
             </td>
           </tr>
           <tr>

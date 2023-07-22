@@ -163,7 +163,7 @@
 
 
 .inner_sub {
-  background-image: url("/assets/clay.jpg");
+  background-image: url("clay.jpg");
   background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
   background-size: cover; /* 背景画像を要素に合わせて拡大・縮小する */
   background-position: center; /* 背景画像の位置を中央に指定する */
@@ -214,7 +214,7 @@
   max-width: 500px
 }
 .table_wrapper{
-  padding-top: 50px;
+  padding: 50px 30px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -257,16 +257,20 @@
   display: flex;
   align-items: center;
 }
-.item_info {
-  display: flex;
-  justify-content: space-around
+.scroll-container {
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
 }
 .user__card {
   width: 100%;
 }
 .lecture-table {
-  width: 100%;
-  margin-left: 50px;
+  display: block;
+  justify-content: center;
 }
 .lecture_col1 {
   border-collapse: collapse;

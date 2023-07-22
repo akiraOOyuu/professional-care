@@ -57,8 +57,9 @@ test:
 #
 production:
   <<: *default
-  adapter: mysql2
+  adapter: postgresql
   database: professional_care_production
+  url: <%= ENV['DATABASE_URL'] %>
   username: root
   password: <%= ENV['PROFESSIONAL_CARE_DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  # socket: /var/lib/mysql/mysql.sock
