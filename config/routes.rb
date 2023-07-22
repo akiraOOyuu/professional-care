@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: "cares#index"
 
-  resources :cares, only: [:index, :new, :create] do
+  resources :cares, only: [:index, :new, :create,:edit, :update ] do
     collection do
       get :lecture_new
       post :lecture_create

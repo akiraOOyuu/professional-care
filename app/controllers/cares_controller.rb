@@ -1,7 +1,7 @@
 class CaresController < ApplicationController
   def index
-    @user = User.all
-
+    @user = current_user
+    @user_category = @user.user_category
   end
   def new
     @user_category = UserCategory.new
@@ -15,6 +15,19 @@ class CaresController < ApplicationController
       render :new
     end
   end
+  def edit
+    @user_category = UserCategory.find(params[:id])
+  end
+  def update
+    @user_category = UserCategory.find(params[:id])
+    if  @user_category.update(user_category_params)
+      redirect_to user_path(current_user)
+    else
+      render :lecture_edit
+    end
+  end
+
+  # =====講義コントローラー=====
 
   def lecture_new
     @lecture = Lecture.new
@@ -45,6 +58,8 @@ class CaresController < ApplicationController
       lecture.destroy
       redirect_to user_path(current_user)
   end
+
+
 
   private
 
