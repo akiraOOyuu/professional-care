@@ -6,8 +6,8 @@ class UsersController < ApplicationController
       @user_id = @user.id
       @user_category = @user.user_category
       @lecture = @user.lectures
-      @lecture = Lecture.includes(:user).order("lecture_day DESC")
- end
-
+      @lecture = @user.lectures.includes(:user).order("lecture_day DESC")
+      
+      redirect_to root_path unless @user == current_user
+   end
 end
-

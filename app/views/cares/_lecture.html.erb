@@ -4,9 +4,10 @@
   <% @lecture.each do |lecture| %>
     <table class="lecture-table">
       <tr>
+       <% if user_signed_in? && current_user.id == lecture.user_id %>
           <th class="colo_edit"><%= link_to "編集", lecture_edit_care_path(lecture), class: :edit_nav__btn %></th>
           <th class="colo_edit"><%= link_to "削除", lecture_delete_care_path(lecture.id), method: :delete, data: { confirm: "削除？" }, class: :delete_nav__btn %></th>
-    
+       <% end %>
           <th class="lecture_col1">受講日</th>
           <td class="lecture_col2"><%= lecture.lecture_day %></td>
           <th class="lecture_col1" >分野</th>
