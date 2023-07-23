@@ -27,4 +27,12 @@ class User < ApplicationRecord
          validates :worker_prefecture_id, numericality: { other_than: 1 , message: "can't be blank"}
          validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank"}
 
+         validates :password, presence: true, length: { minimum: 6 }, if: :password_required?
+
+         def password_required?
+           new_record? || !password.nil? || !password_confirmation.nil?
+         end
+        #  devise pass無し編集機能
+        validates :password, presence: true, on: :create
+
 end
