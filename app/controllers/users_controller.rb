@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         redirect_to user_path(current_user.id)
       else
-        render :edit_other
+        render :edit_other_info
       end
     end
 

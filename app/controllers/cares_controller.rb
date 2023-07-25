@@ -1,4 +1,8 @@
 class CaresController < ApplicationController
+  before_action :restrict_direct_access, only: [ :update, :lecture_update]
+  before_action :set_user_category, only: [:edit, :update]
+  before_action :set_lecture , only: [ :lecture_edit, :lecture_update ]
+  
 
   def index
     @user = current_user
@@ -15,11 +19,12 @@ class CaresController < ApplicationController
       render :new
     end
   end
+
   def edit
-    @user_category = UserCategory.find(params[:id])
+    @user = User.find(params[:id])
   end
+
   def update
-    @user_category = UserCategory.find(params[:id])
     if  @user_category.update(user_category_params)
       redirect_to user_path(current_user)
     else
@@ -43,16 +48,16 @@ class CaresController < ApplicationController
   end
 
   def lecture_edit
-    @lecture = Lecture.find(params[:id])
   end
+
   def lecture_update
-    @lecture = Lecture.find(params[:id])
     if @lecture.update(lecture_params)
       redirect_to user_path(current_user)
     else
       render :lecture_edit
     end
   end
+
   def lecture_delete
       lecture = Lecture.find(params[:id])
       lecture.destroy
@@ -62,6 +67,18 @@ class CaresController < ApplicationController
 
 
   private
+
+  def set_user_category
+    @user_category = UserCategory.find(params[:id])
+  end
+
+  def set_lecture
+    @lecture = Lecture.find(params[:id])
+  end
+
+  def restrict_direct_access
+    redirect_to root_path unless @user == current_user
+  end
 
   def user_category_params
     params.require(:user_category).permit(:employment, :affiliation, :rank_id, :complete_id).merge(user_id: current_user.id)
