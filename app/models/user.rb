@@ -6,8 +6,7 @@ class User < ApplicationRecord
          
          has_one :user_category
          has_many :lectures
-      
-         validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+  
            with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/} do
              validates :first_name
              validates :last_name
@@ -26,5 +25,11 @@ class User < ApplicationRecord
 
          validates :worker_prefecture_id, numericality: { other_than: 1 , message: "can't be blank"}
          validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank"}
+       
+         validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }, presence: true, on: :create
+  with_options on: :edit_other_info do |edit_user|
+    edit_user.validates :password, absence: true
+    edit_user.validates :password_confirmation, absence: true
+  end
 
 end

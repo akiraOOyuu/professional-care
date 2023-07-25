@@ -17,5 +17,10 @@ Rails.application.routes.draw do
   end
   end
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show] do
+    member do
+      get :edit_other_info
+      patch :update_other_info
+    end
+  end
 end
