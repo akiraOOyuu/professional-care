@@ -16,18 +16,16 @@
   <header class="header">
      <div class="inner">
         <div class="nav">
-            <div class="nav">
           <div class="nav__left">
             <%= link_to image_tag("melon.png", class: :logo), root_path %>
           </div>
 
-            <%# ログインしているときは以下を表示 %>
+          <%# ログインしているときは以下を表示 %>
             <% if user_signed_in? %>
-          <div class="nav__right"> 
-               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-             </div> 
+              <div class="nav__right"> 
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+              </div> 
             <% else %>
-            <%# // ログインしているときは上記を表示 %>
 
             <%# ログインしていないときは以下を表示 %>
             <div class="nav__right">
@@ -35,6 +33,7 @@
               <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
             <% end %>
+        </div>
      </div>
 
   </header>
