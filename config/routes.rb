@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get :lecture_edit
     patch :lecture_update
     delete :lecture_delete
-  end
+    end
   end
 
   resources :users, only: [:show] do

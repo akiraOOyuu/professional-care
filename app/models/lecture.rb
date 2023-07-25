@@ -2,11 +2,6 @@ class Lecture < ApplicationRecord
 
   belongs_to :user
 
-  with_options presence: true,  do
-   
-    
-  end
-
   with_options presence: true do
     validates :lecture_day
     validates :lecture_time, format: { with: /\A[0-9]+\z/}

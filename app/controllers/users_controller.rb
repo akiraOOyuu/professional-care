@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  before_action :restrict_direct_access, only: [ :edit_other_info, :update_other_info]
+  before_action :set_user, only: [:show, :edit_other_info, :update_other_info]
 
   def show
-      @user = User.find(params[:id])
       @name = @user.first_name
       @user_id = @user.id
       @user_category = @user.user_category
@@ -12,22 +13,26 @@ class UsersController < ApplicationController
    end
   #  user編集機能 その他情報 住所とか
    def edit_other_info
-    @user = User.find(params[:id])
-    end
+   end
   
     def update_other_info
-      @user = User.find(params[:id])
       if @user.update(user_params)
-        redirect_to root_path, notice: "プロフィールが更新されました。"
+        redirect_to user_path(current_user.id)
       else
-        flash.now[:alert] = "プロフィールの更新に失敗しました。"
         render :edit_other
+      end
     end
-  end
 
   
     private
-
+    
+    def set_user
+      @user = User.find(params[:id])
+    end
+    def restrict_direct_access
+      @user = User.find(params[:id])
+      redirect_to root_path unless @user == current_user
+    end
   
     def user_params
       params.require(:user).permit(:email, 
