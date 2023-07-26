@@ -27,6 +27,9 @@ class User < ApplicationRecord
     validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank"}
 
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }, presence: true, on: :create
+     # パスワードのバリデーションを更新（編集）時に適用する
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }, allow_blank: true, on: :update
+
       
     # :edit_other_infoに設定して、バリデーションを定義
     with_options on: :edit_other_info do |edit_user|

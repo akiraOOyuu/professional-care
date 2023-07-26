@@ -3,7 +3,7 @@ class CaresController < ApplicationController
   before_action :set_user_category, only: [:edit, :update]
   before_action :set_lecture , only: [ :lecture_edit, :lecture_update ]
   
-
+  # ====usercategoryコントローラー====
   def index
     @user = current_user
     @user_category = @user.user_category
@@ -75,7 +75,7 @@ class CaresController < ApplicationController
   def set_lecture
     @lecture = Lecture.find(params[:id])
   end
-
+  #  ログイン本人以外禁止
   def restrict_direct_access
     redirect_to root_path unless @user == current_user
   end

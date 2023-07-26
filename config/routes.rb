@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
+    # パス編集
     registrations: 'users/registrations'
   }
 
   root to: "cares#index"
 
+      # 講義内容登録・編集
   resources :cares, only: [:index, :new, :create,:edit, :update ] do
     collection do
       get :lecture_new
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
     delete :lecture_delete
     end
   end
-
+  #  パス以外のユーザー情報編集
   resources :users, only: [:show] do
     member do
       get :edit_other_info
