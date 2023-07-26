@@ -74,11 +74,7 @@ class CaresController < ApplicationController
   def set_lecture
     @lecture = Lecture.find(params[:id])
   end
-  #  ログイン本人以外禁止
-  def restrict_direct_access
-    redirect_to root_path unless @user == current_user
-  end
-
+  
   def user_category_params
     params.require(:user_category).permit(:employment, :affiliation, :rank_id, :complete_id).merge(user_id: current_user.id)
   end
