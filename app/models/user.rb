@@ -16,10 +16,11 @@ class User < ApplicationRecord
       validates :last_name_reading
     end
     with_options presence: true do
-    validates :postcode        ,format: { with: /\A\d{3}[-]\d{4}\z/, message: "is not a valid format" }
+    validates :childcare_worker_number ,format: { with: /\A\d{1,12}\z/ }
+    validates :postcode                ,format: { with: /\A\d{3}[-]\d{4}\z/, message: "is not a valid format" }
     validates :city 
     validates :block
-    validates :prefecture_id    , numericality: {other_than: 1, message: "can't be blank"}
+    validates :prefecture_id           , numericality: {other_than: 1, message: "can't be blank"}
     end
     validates :birth_date, presence:true
 
