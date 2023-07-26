@@ -1,5 +1,4 @@
 class CaresController < ApplicationController
-  before_action :restrict_direct_access, only: [ :update, :lecture_update]
   before_action :set_user_category, only: [:edit, :update]
   before_action :set_lecture , only: [ :lecture_edit, :lecture_update ]
   
