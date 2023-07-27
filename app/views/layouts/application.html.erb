@@ -19,6 +19,7 @@
           <div class="nav__left">
             <%= link_to image_tag("melon.png", class: :logo), root_path %>
           </div>
+           
 
           <%# ログインしているときは以下を表示 %>
             <% if user_signed_in? %>
@@ -28,7 +29,21 @@
             <% else %>
 
             <%# ログインしていないときは以下を表示 %>
-            <div class="nav__right">
+            <div class="nav">
+                  <%# adminがログインしているときは以下を表示 %>
+                <% if admin_signed_in? %>
+                    <div class="nav__right"> 
+                      <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete, class: :nav__logout %>
+                    </div> 
+                  <% else %>
+
+                  <%# adminがログインしていないときは以下を表示 %>
+                  <div class="nav__right">
+                    <%= link_to "管理者ログイン", new_admin_session_path, class: :nav__btn %>
+                    <%= link_to "管理者新規登録", new_admin_registration_path, class: :nav__btn %>
+                  </div>
+                  <% end %>
+              <div class="nav__right">
               <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
               <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
