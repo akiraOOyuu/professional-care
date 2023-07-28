@@ -15,10 +15,13 @@
   
 }
 .nav {
-  padding: 0 30px;
-  width: 100vw;
+  /* padding: 0 30px; */
+  /* width: 100%; */
   display: flex;
   justify-content: space-between;
+}
+.nav__left {
+  margin-left: 30px;
 }
 .logo {
   width: 50px;
@@ -46,7 +49,6 @@
 
 .nav__logout{
 
-  margin-right: 20px;
   font-weight: bold;
   display: inline-block;
   border-radius: 5px;
