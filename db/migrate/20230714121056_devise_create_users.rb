@@ -19,8 +19,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string  :block                  , null: false
       t.string  :building
 
-      t.references :lectures    , null:false, foreign_key: true
-      t.references :user_categories    , null:false, foreign_key: true
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
