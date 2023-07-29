@@ -4,8 +4,7 @@ class CaresController < ApplicationController
   
   # ====usercategoryコントローラー====
   def index
-    @user = current_user
-    @user_category = @user.user_category
+  
   end
   def new
     @user_category = UserCategory.new
