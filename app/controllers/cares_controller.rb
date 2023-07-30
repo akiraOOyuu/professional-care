@@ -1,4 +1,5 @@
 class CaresController < ApplicationController
+  before_action :authenticate_user!, except: :index
   before_action :set_user_category, only: [:edit, :update]
   before_action :set_lecture , only: [ :lecture_edit, :lecture_update ]
   
@@ -12,7 +13,7 @@ class CaresController < ApplicationController
   def create
     @user_category = UserCategory.new(user_category_params)
     if @user_category.save
-      redirect_to root_path
+      redirect_to  user_path(current_user.id)
     else
       render :new
     end
