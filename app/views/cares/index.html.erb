@@ -14,11 +14,13 @@
 
             <%= link_to "マイページ", user_path(current_user.id), method: :get, class: :nav_top__btn %>
       </div> 
-       <% else %>
+       <% elsif admin_signed_in? %>
       <%# ログインしていないときは以下を表示する %>
-      <div class="other-content">
-       <div>hello</div>
+      
+      <%= render "cares/user_list" %> 
       </div>
+       <% else %>
+        <h1>hello </h1>
     <% end %>
   </div>
 </main>

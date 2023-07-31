@@ -1,0 +1,62 @@
+<div>
+
+<%= form_with(url: search_cares_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "保育士を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+      <div class="other-content">
+<div class="user_list_list">保育士一覧</div>
+    <table class="user-lists" >
+  <tr>
+      <td class="user_col_tb">No</td>
+      <td class="user_col_tb">保育士番号</td>
+      <td class="user_col_tb">名前</td>
+      <td class="user_col_tb">なまえ</td>
+      <td class="user_col_tb">生年月日</td>
+      <td class="user_col_tb">住所</td>
+      <td class="user_col_tb">勤務先施設</td>
+      <td class="user_col_tb">受講時間数</td>
+      <td class="user_col_tb">修了年月日</td>
+      <td class="user_col_tb">履修</td>
+
+  </tr>
+  </div>
+<div class='scroll-container'>
+
+  <% @users.each do |user| %>
+
+      <tr>
+       
+          <td class="user_col"><%= @users.length %></td>
+           <% worker_prefecture = WorkerPrefecture.find(user.worker_prefecture_id) %>
+          <td class="user_col"><%= "#{worker_prefecture.name}-#{user.childcare_worker_number}" %></td>
+          <td class="user_col"><%= user.last_name + " " + user.first_name %></td>
+          <td class="user_col" ><%= user.last_name_reading + " " + user.first_name_reading %></td>
+          <td class="user_col"><%= user.birth_date %></td>
+          <% prefecture = Prefecture.find(user.prefecture_id) %>
+          <td class="user_col"><%= "#{prefecture.name} #{user.city} #{user.block} #{user.building.presence || ''}" %></td>
+          <% if user.user_category %>
+            <td class="user_col"><%= user.user_category.affiliation  %></td>
+          <% else %>
+            <td class="user_col"><%= "　　　　　"%>
+          <% end %>
+          <td class="user_col"><p id="total-time">合計時間: 0 分</p></td>
+          <td class="user_col"><%= user.lectures.latest_lecture_date %></td>
+          <td class="user_col">
+            <% if user.user_category %>
+                <% complete = Complete.find(user.user_category.complete_id) %>
+                <%= "#{complete.name || ''}" %>
+            <% else %>
+                <%= '' %>
+            <% end %></td>
+      </tr>
+        
+    </table>
+    <% end %> 
+ 
+</div>
+
+
+
+
+

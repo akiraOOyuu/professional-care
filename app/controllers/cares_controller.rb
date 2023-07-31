@@ -5,11 +5,13 @@ class CaresController < ApplicationController
   
   # ====usercategoryコントローラー====
   def index
-  
+    @users = User.all
   end
+  
   def new
     @user_category = UserCategory.new
   end
+
   def create
     @user_category = UserCategory.new(user_category_params)
     if @user_category.save

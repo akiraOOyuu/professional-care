@@ -69,6 +69,8 @@
 
 
 /* トップぺージ */
+
+/* トップページ=ユーザー専属表示 */
 .greeting__link:hover{
   opacity: 0.5;
   color: #080808;
@@ -93,11 +95,36 @@
   font-weight: bold;
   font-family: 'Noto Serif JP', serif;
 }
-.top-contents {
-  display: flex;
-  align-items: center;
-}
 
+.scroll-container {
+  overflow-x: auto;
+}
+.user_list_list {
+  display: flex;
+  justify-content: left;
+  padding: 30px;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Noto Serif JP', serif;
+}
+.user-lists {
+  list-style: none;
+  white-space: nowrap;
+}
+.user_col_tb {
+  background: rgba(212, 190, 132, 0.9);
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  border: 1px solid #92670b;
+}
+.user_col {
+  background: rgba(241, 230, 200, 0.9);
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  border: 1px solid #92670b;
+}
 
 .my-img {
   width: 100%;
