@@ -1,5 +1,5 @@
 class CaresController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :search]
   before_action :set_user_category, only: [:edit, :update]
   before_action :set_lecture , only: [ :lecture_edit, :lecture_update ]
   
@@ -7,7 +7,15 @@ class CaresController < ApplicationController
   def index
     @users = User.all
   end
+
+  def search
+    # @users = User.all
+    @keyword = params[:keyword]
+    @users = User.search_by_name(@keyword)
+    @affiliation = params[:affiliation_keyword]
+  end
   
+
   def new
     @user_category = UserCategory.new
   end

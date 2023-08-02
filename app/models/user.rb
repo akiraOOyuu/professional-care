@@ -40,4 +40,11 @@ class User < ApplicationRecord
       edit_user.validates :password_confirmation, absence: true
     end
 
+    def self.search_by_name(keyword)
+      if keyword.present?
+        where("first_name LIKE ? OR last_name LIKE ? OR first_name_reading LIKE ? OR last_name_reading LIKE ?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%")
+      else
+        all
+      end
+    end
 end

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     # 講義内容登録・編集・削除
   resources :cares, only: [:index, :new, :create, :edit, :update] do
     collection do
+      get :search
       get :lecture_new
       post :lecture_create
     end

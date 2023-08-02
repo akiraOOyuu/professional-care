@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 2023_07_27_102526) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.bigint "admins_id", null: false
-    t.index ["admins_id"], name: "index_user_categories_on_admins_id"
     t.index ["user_id"], name: "index_user_categories_on_user_id"
   end
 
@@ -75,6 +73,5 @@ ActiveRecord::Schema.define(version: 2023_07_27_102526) do
   end
 
   add_foreign_key "lectures", "users"
-  add_foreign_key "user_categories", "admins", column: "admins_id"
   add_foreign_key "user_categories", "users"
 end
