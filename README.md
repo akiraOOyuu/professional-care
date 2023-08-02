@@ -1,3 +1,27 @@
+##name
+prifessional-care
+
+##image or gif
+
+##Overview
+保育士さんのキャリアパスの仕組みを構築し、一定の技能・経験を有する職員への処遇改善を行うことで職場への定着率を図るもの。
+こちらを可視化し、簡潔に管理できるようにしたもの。
+##Requirement
+-widows
+-Rails 6.0.6.1
+-devise-4.9.2
+##Usage
+保育士さんのキャリアアップによる名簿管理アプリ
+##Features
+userは自身の基本情報や就職日や講義等を入力。
+就職日から計算し、勤務年数を自動計算。
+講義を保存し、必修研修時間を可視化。
+管理者userはuserの一覧表を確認できる。
+##Reference
+
+##Licence
+
+
 # professional-careのER図
 
 ## admin_users テーブル
