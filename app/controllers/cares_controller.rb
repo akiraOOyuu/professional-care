@@ -12,7 +12,15 @@ class CaresController < ApplicationController
     # @users = User.all
     @keyword = params[:keyword]
     @users = User.search_by_name(@keyword)
-    @affiliation = params[:affiliation_keyword]
+  
+
+    if @keyword.present?
+      # 名前による検索
+      name_search = User.where("first_name LIKE ? OR last_name LIKE ? OR first_name_reading LIKE ? OR last_name_reading LIKE ?", "%#{@keyword}%", "%#{@keyword}%", "%#{@keyword}%", "%#{@keyword}%")
+    else
+      name_search = User.none
+    end
+
   end
   
 
@@ -92,9 +100,4 @@ class CaresController < ApplicationController
   def lecture_params
     params.require(:lecture).permit(:field_id, :lecture_name, :lecture_day, :lecture_time, :instructor_name).merge(user_id: current_user.id)
   end
-  # def search
-  #   query = params[:query]
-  #   results = User.where("name LIKE ? OR name_reading LIKE ?", "%#{query}%", "%#{query}%")
-  #   # 検索
-  # end
 end

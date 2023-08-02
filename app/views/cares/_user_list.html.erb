@@ -11,7 +11,7 @@
             <td class="user_col_tb">生年月日</td>
             <td class="user_col_tb">住所</td>
             <td class="user_col_tb">勤務先施設</td>
-            <td class="user_col_tb">受講時間数</td>
+            <td class="user_col_tb">受講講義時間数</td>
             <td class="user_col_tb">修了年月日</td>
             <td class="user_col_tb">履修</td>
 
@@ -19,10 +19,10 @@
         </div>
       <div id='user-list-container'>
 
-        <% @users.each do |user| %>
+        <% @users.each_with_index do |user, index| %>
 
         <tr>
-            <td class="user_col"><%= @users.length %></td>
+            <td class="user_col"><%= index + 1 %></td>
               <% worker_prefecture = WorkerPrefecture.find(user.worker_prefecture_id) %>
             <td class="user_col"><%= "#{worker_prefecture.name}-#{user.childcare_worker_number}" %></td>
             <td class="user_col"><%= user.last_name + " " + user.first_name %></td>
@@ -35,7 +35,11 @@
             <% else %>
               <td class="user_col"><%= "　　　　　"%>
             <% end %>
-              <td class="user_col"><p id="total-time">合計時間: 0 分</p></td>
+              <td class="user_col">
+                <p class="total-time" >
+                   0 分 <!-- 初期値を 0 分としておきます -->
+                </p>
+              </td>
               <td class="user_col"><%= user.lectures.latest_lecture_date %></td>
               <td class="user_col">
             <% if user.user_category %>
@@ -49,6 +53,7 @@
     </table>
  
 </div>
+
 
 
 

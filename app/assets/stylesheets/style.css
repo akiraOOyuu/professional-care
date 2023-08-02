@@ -24,7 +24,7 @@
   margin-left: 30px;
 }
 .logo {
-  width: 50px;
+  width: 190px;
 }
 .nav__btn{
   margin-right: 20px;
@@ -151,6 +151,39 @@
   opacity: 0.8;
   color: #f5f1ea;
   background: #df9d0e;
+}
+
+/* 検索機能 */
+.search-form {
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+}
+.search-input {
+  margin-right: 20px;
+  border-radius: 5px;
+  height: 36px;
+  width: auto;
+}
+.search-btn {
+  margin-right: 20px;
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #e9cf89;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #92670b solid;
+  background-color: #352808;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.search-btn:hover{
+  opacity: 0.8;
+  color: #352727;
+  background: #7c6945;
 }
 /* newページ */
 

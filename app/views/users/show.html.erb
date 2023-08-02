@@ -87,19 +87,18 @@
         </h2>
       <div class="top-contents">
             <%# リンク 一覧%>
-            <%= link_to 'パスワード変更',  edit_user_registration_path(current_user.id), class: :nav_top__btn %> 
-            <%= link_to '登録情報変更',   edit_other_info_user_path(current_user.id), class: :nav_top__btn %>   
+            <%= link_to 'パスワード変更',  edit_user_registration_path(@user), class: :nav_top__btn %> 
+            <%= link_to '登録情報変更',   edit_other_info_user_path(@user), class: :nav_top__btn %>   
 
             <%# 登録してたら編集画面表示 %>
             <% if @user_category.nil? %>
               <%= link_to "詳細内容登録", new_care_path, class: :nav_top__btn %>
             <% else %>
-              <%= link_to "詳細内容変更", edit_care_path(current_user), method: :get, class: :nav_top__btn %>
+              <%= link_to "詳細内容変更", edit_care_path(@user_category), method: :get, class: :nav_top__btn %>
             <% end %>
+            <%= link_to "講習内容追加",  lecture_new_cares_path(@user_id), class: :nav_top__btn %>
         </div>
-    
-       
-        <%= link_to "講習内容追加",  lecture_new_cares_path(@user_id), class: :nav_top__btn %>
+  
         <p>講義合計時間:</p><p id="total-time">合計時間: 0 分</p>
       </div>
       <div class="user__card">
