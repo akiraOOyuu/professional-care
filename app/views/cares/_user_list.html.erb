@@ -36,9 +36,9 @@
               <td class="user_col"><%= "　　　　　"%>
             <% end %>
               <td class="user_col">
-                <p class="total-time" >
-                   0 分 <!-- 初期値を 0 分としておきます -->
-                </p>
+                  <p class="total-time" data-total-time="<%= calculate_total_time(user.lectures) %>">
+                     <%= min2hour(calculate_total_time(user.lectures)) %>
+                  </p>
               </td>
               <td class="user_col"><%= user.lectures.latest_lecture_date %></td>
               <td class="user_col">

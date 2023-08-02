@@ -8,7 +8,6 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../lecture_total")
-require("../total_time")
 require("../employment_year")
 
 
