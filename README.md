@@ -35,10 +35,10 @@ prifessional-care
 | email              |string     |null: false , unique: true         |
 | encrypted_password |string     |null: false                        |
 | name               |string     |null: false                        |
-| name_reading       |string     |null: false                        |
+
 
 ### Association
-
+- has_many :user
 - has_one :user_category, foreign_key: :user_id
 
 
@@ -63,6 +63,7 @@ prifessional-care
 
 ### Association
 
+- belongs_to :admin
 - has_many :lectures
 - has_one :user_category, foreign_key: :user_id
 
@@ -81,7 +82,7 @@ prifessional-care
 ### Association
 
 - belongs_to :user
-- belongs_to :admin_user, class_name: "AdminUser"
+- belongs_to :admin
 
 
 ## lectures

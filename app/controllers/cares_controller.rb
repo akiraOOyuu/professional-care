@@ -1,19 +1,37 @@
 class CaresController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :search]
   before_action :set_user_category, only: [:edit, :update]
   before_action :set_lecture , only: [ :lecture_edit, :lecture_update ]
   
   # ====usercategoryコントローラー====
   def index
-    @user = current_user
-    @user_category = @user.user_category
+    @users = User.all
   end
+
+  def search
+    # @users = User.all
+    @keyword = params[:keyword]
+    @users = User.search_by_name(@keyword)
+  
+
+    if @keyword.present?
+      # 名前による検索
+      name_search = User.where("first_name LIKE ? OR last_name LIKE ? OR first_name_reading LIKE ? OR last_name_reading LIKE ?", "%#{@keyword}%", "%#{@keyword}%", "%#{@keyword}%", "%#{@keyword}%")
+    else
+      name_search = User.none
+    end
+
+  end
+  
+
   def new
     @user_category = UserCategory.new
   end
+
   def create
     @user_category = UserCategory.new(user_category_params)
     if @user_category.save
-      redirect_to root_path
+      redirect_to  user_path(current_user.id)
     else
       render :new
     end
@@ -82,9 +100,4 @@ class CaresController < ApplicationController
   def lecture_params
     params.require(:lecture).permit(:field_id, :lecture_name, :lecture_day, :lecture_time, :instructor_name).merge(user_id: current_user.id)
   end
-  # def search
-  #   query = params[:query]
-  #   results = User.where("name LIKE ? OR name_reading LIKE ?", "%#{query}%", "%#{query}%")
-  #   # 検索
-  # end
 end

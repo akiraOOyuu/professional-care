@@ -22,5 +22,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 合計時間を表示する要素に合計値を代入
-  document.getElementById("total-time").textContent = `講義 合計時間: ${min2hour(total_time)}`;
+  document.getElementById("total-time").textContent = ` ${min2hour(total_time)}`;
 });

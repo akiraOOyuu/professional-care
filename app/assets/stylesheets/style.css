@@ -15,13 +15,16 @@
   
 }
 .nav {
-  padding: 0 30px;
-  width: 100vw;
+  /* padding: 0 30px; */
+  /* width: 100%; */
   display: flex;
   justify-content: space-between;
 }
+.nav__left {
+  margin-left: 30px;
+}
 .logo {
-  width: 50px;
+  width: 190px;
 }
 .nav__btn{
   margin-right: 20px;
@@ -46,7 +49,6 @@
 
 .nav__logout{
 
-  margin-right: 20px;
   font-weight: bold;
   display: inline-block;
   border-radius: 5px;
@@ -68,6 +70,7 @@
 
 /* トップぺージ */
 
+/* トップページ=ユーザー専属表示 */
 .greeting__link:hover{
   opacity: 0.5;
   color: #080808;
@@ -89,22 +92,39 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 200px;
   font-weight: bold;
   font-family: 'Noto Serif JP', serif;
 }
-.card__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 150px;
-}
-.top-contents {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-}
 
+.scroll-container {
+  overflow-x: auto;
+}
+.user_list_list {
+  display: flex;
+  justify-content: left;
+  padding: 30px;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Noto Serif JP', serif;
+}
+.user-lists {
+  list-style: none;
+  white-space: nowrap;
+}
+.user_col_tb {
+  background: rgba(212, 190, 132, 0.9);
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  border: 1px solid #92670b;
+}
+.user_col {
+  background: rgba(241, 230, 200, 0.9);
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  border: 1px solid #92670b;
+}
 
 .my-img {
   width: 100%;
@@ -113,7 +133,7 @@
   opacity: 0.8;
 }
 .nav_top__btn{
-  margin-right: 20px;
+  margin: 20px;
   display: inline-block;
   padding: 0.8em 1.6em;
   font-size: 0.8em;
@@ -123,7 +143,7 @@
   user-select: none;
   border: 1px #92670b solid;
   background-color: #c5b158;
-  border-radius: 3px;
+  border-radius: 5px;
   transition: 0.4s ease;
 }
 
@@ -131,6 +151,39 @@
   opacity: 0.8;
   color: #f5f1ea;
   background: #df9d0e;
+}
+
+/* 検索機能 */
+.search-form {
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+}
+.search-input {
+  margin-right: 20px;
+  border-radius: 5px;
+  height: 36px;
+  width: auto;
+}
+.search-btn {
+  margin-right: 20px;
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #e9cf89;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #92670b solid;
+  background-color: #352808;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.search-btn:hover{
+  opacity: 0.8;
+  color: #352727;
+  background: #7c6945;
 }
 /* newページ */
 
@@ -192,7 +245,7 @@
   font-size: 30px;
   padding-top: 20px;
   color: #55400a;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Serif JP', serif;
 }
 .table{
   border-collapse: collapse;
@@ -229,7 +282,7 @@
   max-width: 500px
 }
 .table_wrapper{
-  padding: 50px 30px;
+  padding: 20px 30px 50px 30px;
   width: 100%;
   display: flex;
   justify-content: space-around;
