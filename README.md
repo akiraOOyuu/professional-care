@@ -1,101 +1,40 @@
 ## name
-prifessional-care
+professional-care
 
 ## image or gif
 
+[Top page](https://gyazo.com/f9735ec8e5e88f2c8583be99abdd4850)
+[My page](https://gyazo.com/8fe42dd1b69d982d9a01e0adbc3e9ef8)
 ## Overview
-保育士さんのキャリアパスの仕組みを構築し、一定の技能・経験を有する職員への処遇改善を行うことで職場への定着率を図るもの。
-こちらを可視化し、簡潔に管理できるようにしたもの。
+プロッフェショナルーケアは、保育士のキャリアパスの仕組みを構築し、一定の技能・経験を有する職員への処遇改善を行い、職場への定着率を図ることを目的としたアプリケーションです。保育士が自身のキャリアを可視化し、管理できる機能を提供します。また、管理者ユーザーは登録されたユーザーの一覧表を閲覧できます。
 
 ## Requirement
 - widows
+- HTML
+- CSS
 - Rails 6.0.6.1
+- Ruby on Rails
 - devise-4.9.2
+- JavaScript
+- MySQL
+- GitHub
+
 
 ## Usage
 保育士さんのキャリアアップによる名簿管理アプリ
 
 ## Features
-- userは自身の基本情報や就職日や講義等を入力。
-- 就職日から計算し、勤務年数を自動計算。
-- 講義を保存し、必修研修時間を可視化。
-- 管理者userはuserの一覧表を確認できる。
+1. 通常ユーザーは新規登録し、ログイン後、自分の研修内容を保存します。
+2. マイページより保存した内容から勤務年数を自動計算、受講した研修内容、トータル時間を確認できます。
+3. 管理者ユーザーは登録すると、ユーザーの一覧表が閲覧できます。名前で検索が可能です。
 
 ## Reference
+- Railsチュートリアル: [リンク](https://railstutorial.jp/chapters/beginning?version=7.0#cha-beginningl)
+- Qiita管理者ユーザー: [リンク](https://nllllll.com/ruby-on-rails/rails-devise/)
 
-##Licence
-
+## Licence
+- MIT
 
 # professional-careのER図
 
-## admin_users テーブル
-
-| Colum              | Type      | Option                            |
-|--------------------|-----------|-----------------------------------|
-| email              |string     |null: false , unique: true         |
-| encrypted_password |string     |null: false                        |
-| name               |string     |null: false                        |
-
-
-### Association
-- has_many :user
-- has_one :user_category, foreign_key: :user_id
-
-
-## users テーブル
-
-| Colum                  | Type      | Option                       |
-|------------------------|-----------|------------------------------|
-| email                  |string     |null: false , unique: true    |
-| encrypted_password     |string     |null: false                   |
-| worker_prefecture_id   |string     |null: false                   |
-| childcare_worker_number|string     |null: false                   |
-| first_name             |string     |null: false                   |
-| last_name              |string     |null: false                   |
-| first_name_reading     |string     |null: false                   |
-| last_name_reading      |string     |null: false                   |
-| birth_date             |date       |null: false                   |
-| postcode               |string     |null: false                   |
-| prefecture_id          |integer    |null: false                   |
-| city                   |string     |null: false                   |
-| block                  |string     |null: false                   |
-| building               |string     |                              |
-
-### Association
-
-- belongs_to :admin
-- has_many :lectures
-- has_one :user_category, foreign_key: :user_id
-
-
-## user_categories
-
-
-| Colum                | Type      | Option                       |
-|----------------------|-----------|------------------------------|
-| employment           |date       |null: false , unique: true    |
-| affiliation          |string     |null: false                   |
-| rank_id              |integer    |null: false                   |
-| complete_id          |integer    |null: false                   |
-| user                 |references |null: false, foreign_key: true|
-
-### Association
-
-- belongs_to :user
-- belongs_to :admin
-
-
-## lectures
-
-| Colum              | Type      | Option                       |
-|--------------------|-----------|------------------------------|
-| field_id           |integer    |null: false                   |
-| lecture_name       |string     |null: false                   |
-| lecture_time       |string     |null: false                   |
-| instructor_name    |string     |null: false                   |
-| lecture_day        |date       |null: false                   |
-| user               |references |null: false, foreign_key: true|
-
-### Association
-
-- belongs_to :user
+![ER Diagram](ER.png)
