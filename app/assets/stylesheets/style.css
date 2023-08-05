@@ -3,7 +3,9 @@
 .header {
   background-color: #2c1f02f1;
   width: 100%;
+  height: 100px;
   padding: 20px 0;
+
 }
 .header .nav {
   display: flex;
@@ -15,8 +17,6 @@
   
 }
 .nav {
-  /* padding: 0 30px; */
-  /* width: 100%; */
   display: flex;
   justify-content: space-between;
 }
@@ -25,51 +25,100 @@
 }
 .logo {
   width: 190px;
+
 }
+
+.hamburger {
+  height: 50px;
+  margin-right: 30px;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
 .nav__btn{
-  margin-right: 20px;
-  display: inline-block;
-  padding: 0.8em 1.6em;
+  color: black;
   font-size: 0.8em;
-  font-weight: bold;
-  color: #e9cf89;
   text-decoration: none;
   user-select: none;
-  border: 1px #92670b solid;
-  background-color: #55400a;
-  border-radius: 3px;
-  transition: 0.4s ease;
 }
 
 .nav__btn:hover{
   opacity: 0.7;
-  color: #352727;
-  background: #7c6945;
+  color: rgb(230, 148, 25);
 }
 
 .nav__logout{
-
-  font-weight: bold;
-  display: inline-block;
-  border-radius: 5px;
-  color: #e9cf89;
-  border: 1px #92670b solid;
-  background-color: #55400a;
-  opacity: 0.7;
-  padding: 0.8em 1.6em;
+  color: black;
   font-size: 0.8em;
   text-decoration: none;
   user-select: none;
 }
 .nav__logout:hover{
   opacity: 0.7;
-  color: #352727;
-  background: #f1b32c;
+  color: rgb(230, 148, 25);
+}
+.show-lists {
+  display: flex;
+  flex-direction: column;
+}
+.pull-down-list {
+  display: block;
+  font-size: 23px;
+  padding: 8px 0px;
+}
+#pull-down {
+  display: none;
+}
+#menu {
+  width: 200px;
+  border-radius: 5px;
+  background: rgba(250, 243, 225, 0.3);
+  position: absolute;
+  right: 0;
+  top: 100px;
+  z-index: 3; 
 }
 
-
 /* トップぺージ */
-
+.top-main {
+  height: 100vh;
+  background-image: url("care.jpg");
+  background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+  background-size: cover; /* 背景画像を要素に合わせて拡大・縮小する */
+  background-position: center; /* 背景画像の位置を中央に指定する */
+  opacity: 0.8;
+}
+.top-sub-content {
+  height: 60vh
+}
+.top-main-contents {
+  font-size: 50px;
+  color: white;
+  font-family: 'Noto Serif JP', serif;
+}
+.top-up {
+  padding: 40px;
+}
+.top-down {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: end;
+}
+.footer_nav {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color:#cff076;
+  margin-right: 20px;
+}
+.footer_nav:hover {
+  opacity: 0.8;
+}
+li {
+  list-style: none;
+  display: inline-block;
+}
 /* トップページ=ユーザー専属表示 */
 .greeting__link:hover{
   opacity: 0.5;
@@ -80,14 +129,7 @@
   color: #020000f6;
   text-decoration: none;
 }
-.top-main {
-  height: 100vh;
-  background-image: url("kindergarten.jpg");
-  background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
-  background-size: cover; /* 背景画像を要素に合わせて拡大・縮小する */
-  background-position: center; /* 背景画像の位置を中央に指定する */
-  opacity: 0.7;
-}
+
 .greeting {
   display: flex;
   justify-content: center;
@@ -340,6 +382,7 @@
   display: block;
   justify-content: center;
 }
+
 .lecture_col1 {
   border-collapse: collapse;
   background: rgba(170, 144, 73, 0.8);
@@ -384,7 +427,18 @@
   color: #641111;
   opacity: 0.8;
 }
-
+/* footer */
+.footer {
+  background-color: #2c1f02f1;
+  width: 100%;
+  height: 100px;
+  padding: 20px 0;
+}
+.copy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /*PC設定*/
 @media screen and (max-width: 768px) {
   .table_wrapper {

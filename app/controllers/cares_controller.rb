@@ -6,10 +6,12 @@ class CaresController < ApplicationController
   # ====usercategoryコントローラー====
   def index
     @users = User.all
+    @user = current_user 
+    @user_category = @user.user_category
+    @lecture = @user.lectures
   end
 
   def search
-    # @users = User.all
     @keyword = params[:keyword]
     @users = User.search_by_name(@keyword)
   
@@ -26,6 +28,8 @@ class CaresController < ApplicationController
 
   def new
     @user_category = UserCategory.new
+    @user = current_user
+    @user_category = @user.user_category
   end
 
   def create
@@ -53,6 +57,8 @@ class CaresController < ApplicationController
 
   def lecture_new
     @lecture = Lecture.new
+    @user = current_user
+    @user_category = @user.user_category
   end
   def lecture_create
     @lecture = Lecture.new(lecture_params)
