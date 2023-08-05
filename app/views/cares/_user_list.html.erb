@@ -40,7 +40,11 @@
                      <%= min2hour(calculate_total_time(user.lectures)) %>
                   </p>
               </td>
+              <% if user.lectures.present? %>
               <td class="user_col"><%= user.lectures.latest_lecture_date %></td>
+              <% else %>
+              <td class="user_col"><%= "　　　　　"%>
+              <% end %>
               <td class="user_col">
             <% if user.user_category %>
                 <% complete = Complete.find(user.user_category.complete_id) %>

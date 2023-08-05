@@ -1,14 +1,13 @@
 class CaresController < ApplicationController
   before_action :authenticate_user!, except: [:index, :search]
+  before_action :set_lecture
   before_action :set_user_category, only: [:edit, :update]
   before_action :set_lecture , only: [ :lecture_edit, :lecture_update ]
   
   # ====usercategoryコントローラー====
   def index
     @users = User.all
-    @user = current_user 
-    @user_category = @user.user_category
-    @lecture = @user.lectures
+
   end
 
   def search
@@ -27,9 +26,7 @@ class CaresController < ApplicationController
   
 
   def new
-    @user_category = UserCategory.new
-    @user = current_user
-    @user_category = @user.user_category
+    @category = UserCategory.new
   end
 
   def create
@@ -57,8 +54,6 @@ class CaresController < ApplicationController
 
   def lecture_new
     @lecture = Lecture.new
-    @user = current_user
-    @user_category = @user.user_category
   end
   def lecture_create
     @lecture = Lecture.new(lecture_params)
@@ -97,6 +92,12 @@ class CaresController < ApplicationController
 
   def set_lecture
     @lecture = Lecture.find(params[:id])
+  end
+
+  def set_lecture
+    @user = current_user 
+    @lecture = @user.lectures
+    @user_category = @user.user_category
   end
   
   def user_category_params
