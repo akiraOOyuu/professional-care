@@ -20,47 +20,47 @@ RSpec.describe Lecture, type: :model do
       it 'ユーザーが紐付いていなければ保存できない' do
         @lecture.user = nil
         @lecture.valid?
-         expect(@lecture.errors.full_messages).to include('User must exist')
+         expect(@lecture.errors.full_messages).to include("ユーザーを入力してください")
     end
       it '日付が空では保存できない' do
          @lecture.lecture_day = ''
          @lecture.valid?
-         expect(@lecture.errors.full_messages).to include("Lecture day can't be blank") 
+         expect(@lecture.errors.full_messages).to include("受講日を入力してください") 
       end
       it 'lecture_timeが空では保存できない' do
         @lecture.lecture_time = ''
         @lecture.valid?
-        expect(@lecture.errors.full_messages).to include("Lecture time can't be blank") 
+        expect(@lecture.errors.full_messages).to include("講義時間を入力してください") 
      end
      it 'lecture_timeが全角数字では保存できない' do
       @lecture.lecture_time = '９０'
       @lecture.valid?
-      expect(@lecture.errors.full_messages).to include("Lecture time is invalid") 
+      expect(@lecture.errors.full_messages).to include("講義時間は不正な値です") 
    end
       it 'lecture_nameが空では保存できない' do
         @lecture.lecture_name = ''
         @lecture.valid?
-        expect(@lecture.errors.full_messages).to include("Lecture name can't be blank") 
+        expect(@lecture.errors.full_messages).to include("講義名を入力してください") 
      end     
       it 'instructor_nameが空では保存できない' do
         @lecture.instructor_name = ''
         @lecture.valid?
-        expect(@lecture.errors.full_messages).to include("Instructor name can't be blank") 
+        expect(@lecture.errors.full_messages).to include("講師名を入力してください", "講師名は不正な値です") 
       end
       it 'instructor_nameが全角数字では保存できない' do
         @lecture.instructor_name = '１１１１'
         @lecture.valid?
-        expect(@lecture.errors.full_messages).to include("Instructor name is invalid") 
+        expect(@lecture.errors.full_messages).to include("講師名は不正な値です") 
       end
       it 'instructure_nameにスペースがあると保存できない' do
         @lecture.instructor_name = ' '
         @lecture.valid?
-        expect(@lecture.errors.full_messages).to include("Instructor name is invalid") 
+        expect(@lecture.errors.full_messages).to include("講師名は不正な値です") 
       end
       it 'fild_idが初期値では保存できない' do
         @lecture.field_id = 1
         @lecture.valid?
-        expect(@lecture.errors.full_messages).to include("Field can't be blank") 
+        expect(@lecture.errors.full_messages).to include("分野を選択してください") 
       end     
     end
   end

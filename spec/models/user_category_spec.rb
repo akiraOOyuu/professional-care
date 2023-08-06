@@ -2,9 +2,8 @@ require 'rails_helper'
 
 RSpec.describe UserCategory, type: :model do
   before do
-    @lecture = FactoryBot.build(:lecture) 
+    @user_category = FactoryBot.build(:user_category)
   end
-
   describe 'user_categoryの保存' do
     context 'user_categoryが保存できる場合' do
       
@@ -12,7 +11,8 @@ RSpec.describe UserCategory, type: :model do
         expect(@user_category).to be_valid
       end
       it 'affiliationが全角文字だと保存できる' do
-        @lecture.user_category
+        @user_category.affiliation = '全角文字' # 正しいオブジェクトを使ってテストを実行
+        expect(@user_category).to be_valid
       end
     end
 
@@ -20,27 +20,27 @@ RSpec.describe UserCategory, type: :model do
       it 'ユーザーが紐付いていなければ保存できない' do
         @user_category.user = nil
         @user_category.valid?
-         expect(@lecture.errors.full_messages).to include('User must exist')
+         expect(@user_category.errors.full_messages).to include("ユーザーを入力してください")
     end
       it 'employmentが空では保存できない' do
-        @lecture.employment = ''
-        @lecture.valid?
-        expect(@lecture.errors.full_messages).to include("Employment time can't be blank") 
+        @user_category.employment = ''
+        @user_category.valid?
+        expect(@user_category.errors.full_messages).to include("就業日を入力してください") 
     end
-      it '就業日が空では保存できない' do
+      it 'affiliationが空では保存できない' do
          @user_category.affiliation = ''
          @user_category.valid?
-         expect(@user_category.errors.full_messages).to include("Affiliation day can't be blank") 
+         expect(@user_category.errors.full_messages).to include("所属園を入力してください","所属園は不正な値です") 
       end
       it 'rank_idが初期値では保存できない' do
         @user_category.rank_id = 1
         @user_category.valid?
-        expect(@user_category.errors.full_messages).to include("Rank can't be blank") 
+        expect(@user_category.errors.full_messages).to include("ランクを選択して下さい") 
       end
       it 'complate_idが初期値では保存できない' do
-        @user_category.complate_id = 1
+        @user_category.complete_id = 1
         @user_category.valid?
-        expect(@user_category.errors.full_messages).to include("Complate can't be blank") 
+        expect(@user_category.errors.full_messages).to include("履修を選択して下さい") 
       end     
     end
   end
