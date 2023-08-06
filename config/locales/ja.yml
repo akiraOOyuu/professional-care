@@ -1,0 +1,40 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        password: パスワード
+        first_name: 名（漢）
+        last_name: 姓（漢）
+        first_name_reading: 名（かな）
+        last_name_reading: 姓（かな）
+        childcare_worker_number: 保育士登録番号
+        postcode: 郵便番号
+        city: 市町村
+        block: 番地
+        prefecture_id: 都道府県
+        birth_date: 誕生日
+        worker_prefecture_id: 保育士番号登録都道府県
+      
+      lecture:
+        user: ユーザー
+        field_id: 分野
+        lecture_name: 講義名
+        lecture_day: 受講日
+        lecture_time: 講義時間
+        instructor_name: 講師名
+
+      admin:
+        password: パスワード
+        email: Eメール
+        facility: 施設名
+      
+      user_category:
+        user: ユーザー
+        employment: 就業日
+        affiliation: 所属園
+        rank_id: ランク
+        complete_id: 履修
+
+
+
+

@@ -61,7 +61,7 @@
 
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">保育士番号登録都道府</label>
+      <label class="form-text">保育士番号登録都道府県</label>
       <span class="indispensable">必須</span>
       <%= f.select :worker_prefecture_id,  options_for_select(WorkerPrefecture.pluck(:name, :id)), {}, { class: "select-box", id: "prefecture" } %>
     </div>

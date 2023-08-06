@@ -66,3 +66,4 @@ group :production do
 end
   gem 'active_hash'
   gem 'dotenv-rails', groups: [:development, :test]
+  gem 'rails-i18n'

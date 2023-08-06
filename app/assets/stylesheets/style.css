@@ -98,7 +98,8 @@
   font-family: 'Noto Serif JP', serif;
 }
 .top-up {
-  padding: 40px;
+  padding-top: 100px;
+  padding-left: 40px;
 }
 .top-down {
   padding-bottom: 20px;

@@ -26,7 +26,8 @@ class CaresController < ApplicationController
   
 
   def new
-    @category = UserCategory.new
+    @user = User.new
+    @user_category = UserCategory.new
   end
 
   def create
