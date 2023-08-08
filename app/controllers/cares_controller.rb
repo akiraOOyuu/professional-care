@@ -2,8 +2,7 @@ class CaresController < ApplicationController
   before_action :authenticate_user!, except: [:index, :search]
   before_action :set_lecture
   before_action :set_user_category, only: [:edit, :update]
-  before_action :set_lecture_user , only: [ :lecture_edit, :lecture_update ]
-  
+  before_action :set_lecture , only: [ :lecture_edit, :lecture_update ]
   
   # ====usercategoryコントローラー====
   def index
@@ -96,15 +95,10 @@ class CaresController < ApplicationController
     @lecture = Lecture.find(params[:id])
   end
 
-  def set_lecture_user
+  def set_lecture
     @user = current_user 
     @lecture = @user.lectures
     @user_category = @user.user_category
-  end
-  def set_security
-    unless @user == current_user
-      redirect_to root_path
-    end
   end
   
   def user_category_params

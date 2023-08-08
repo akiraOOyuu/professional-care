@@ -6,9 +6,9 @@
         <div class="form-group">
         <div class="error-alert">
     <ul>
-      <%# @lecture.errors.full_messages.each do |message| %>
-        <li class='error-message'><%#= message %></li>
-      <%# end %>
+      <% @lecture.errors.full_messages.each do |message| %>
+        <li class='error-message'><%= message %></li>
+      <% end %>
     </ul>
   </div>
       
