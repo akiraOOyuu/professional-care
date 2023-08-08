@@ -16,7 +16,8 @@ class User < ApplicationRecord
       validates :last_name_reading
     end
     with_options presence: true do
-      validates :email, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+          # 自分の情報更新時は一意スキップ
+      validates :email, uniqueness: { scope: :id, unless: :email_changed? }
       validates :childcare_worker_number ,format: { with: /\A\d{1,12}\z/ }
       validates :postcode                ,format: { with: /\A\d{3}[-]\d{4}\z/, message: "は半角数字と－を使用して下さい" }
       validates :city 
@@ -40,7 +41,7 @@ class User < ApplicationRecord
     # パスワード確認が空（nilまたは空文字列）であることを検証
       edit_user.validates :password_confirmation, absence: true
     end
-
+    
     def self.search_by_name(keyword)
       if keyword.present?
         where("first_name LIKE ? OR last_name LIKE ? OR first_name_reading LIKE ? OR last_name_reading LIKE ?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%")
