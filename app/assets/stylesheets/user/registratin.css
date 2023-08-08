@@ -156,7 +156,16 @@
   color: #fff;
   background: #7c6945;
 }
-
+.sub-btn {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: black;
+}
+.sub-btn:hover {
+  color: lightcoral;
+  opacity: 0.7;
+}
 .register-info {
   margin: 30px 180px 0 0;
   color: #0099e8;
