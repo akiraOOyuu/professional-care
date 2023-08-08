@@ -24,7 +24,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
         end
     else
       flash.now[:alert] = '管理者パスワードが一致しません。'
-      render :new
+      redirect_to :admin_registration_path
     end
   end
   # GET /resource/edit
