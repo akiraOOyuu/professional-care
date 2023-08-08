@@ -44,6 +44,14 @@
           </div>
           <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
         </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">管理者登録パスワード</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.password_field :entered_password, class:"input-default", id:"admin-password", placeholder:"管理者登録用パスワード" %>
+        </div>
         
         <div class='register-btn'>
           <%= f.submit "登録" ,class:"register-sub-btn" ,id:"registration-submit"%>

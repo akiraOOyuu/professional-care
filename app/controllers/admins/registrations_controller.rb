@@ -12,10 +12,18 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    @admin = Admin.new(admin_params)
-    if @admin.save
-      redirect_to  root_path
+    entered_password = params[:admin][:entered_password]
+    admin_password = ENV['ADMIN_PASSWORD']
+    if entered_password == admin_password
+      @admin = Admin.new(admin_params)
+      
+        if @admin.save
+          redirect_to  root_path, notice: '管理者が登録されました。'
+        else
+          render :new
+        end
     else
+      flash.now[:alert] = '管理者パスワードが一致しません。'
       render :new
     end
   end
