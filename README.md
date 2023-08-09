@@ -99,7 +99,7 @@ professional-careは、保育士のキャリアパスの仕組みを構築し、
 
 ## 画面遷移図
 
-![Screen Transition Diagramm](document.png)
+![Screen Transition Diagram](document.png)
 
 ## 工夫した点
 
