@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   before_action :restrict_direct_access, only: [ :edit_other_info, :update_other_info]
   before_action :set_user, only: [:show, :edit_other_info, :update_other_info]
 
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       @lecture = @user.lectures
       @lecture = @user.lectures.includes(:user).order("lecture_day DESC")
       
-      redirect_to  user_path(current_user.id) unless @user == current_user
+
    end
   #  user編集機能 その他情報 住所とか
    def edit_other_info
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     end
     def restrict_direct_access
       @user = User.find(params[:id])
-      redirect_to root_path unless @user == current_user
+      redirect_to root_path unless @user == current_user || current_user&.admin?
     end
   
     def user_params

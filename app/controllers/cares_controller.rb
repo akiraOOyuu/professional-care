@@ -1,5 +1,5 @@
 class CaresController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :search]
+  before_action :authenticate_user!, except: [:index, :search, :edit, :update]
   before_action :set_lecture, only: [:lecture_edit, :lecture_update]
   before_action :set_user_category, only: [:edit, :update]
   before_action :set_lecture_user , only: [ :lecture_edit, :lecture_update ]
@@ -45,8 +45,12 @@ class CaresController < ApplicationController
   end
 
   def update
-    if  @user_category.update(user_category_params)
-      redirect_to user_path(current_user)
+    if @user_category.update(user_category_params)
+      if current_user
+        redirect_to user_path(current_user)
+      else
+        redirect_to user_path(@user_category.user)
+      end
     else
       render :lecture_edit
     end
@@ -108,7 +112,11 @@ class CaresController < ApplicationController
   end
   
   def user_category_params
-    params.require(:user_category).permit(:employment, :affiliation, :rank_id, :complete_id).merge(user_id: current_user.id)
+    if current_user.present?
+      params.require(:user_category).permit(:employment, :affiliation, :rank_id, :complete_id).merge(user_id: current_user.id)
+    else
+      params.require(:user_category).permit(:employment, :affiliation, :rank_id, :complete_id)
+    end
   end
 
   def lecture_params
