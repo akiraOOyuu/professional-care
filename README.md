@@ -8,8 +8,10 @@ https://professional-care.onrender.com/
 
 ## test　account
 
-- Basic認証パスワード: admin
-- Basic認証ID: 2222
+### Basic認証
+
+- パスワード: admin
+- ID: 2222
 
 ### ユーザーログイン
 - メールアドレス: test@test
@@ -22,7 +24,7 @@ https://professional-care.onrender.com/
 
 ## image or gif
 
-[Top page](https://gyazo.com/f9735ec8e5e88f2c8583be99abdd4850)
+[Top page](https://gyazo.com/39e8695a334ab92920298cc66f8bd4bc)
 
 [My page](https://gyazo.com/8fe42dd1b69d982d9a01e0adbc3e9ef8)
 ## Overview

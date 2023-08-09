@@ -25,7 +25,7 @@
             <td class="user_col"><%= index + 1 %></td>
               <% worker_prefecture = WorkerPrefecture.find(user.worker_prefecture_id) %>
             <td class="user_col"><%= "#{worker_prefecture.name}-#{user.childcare_worker_number}" %></td>
-            <td class="user_col"><%= user.last_name + " " + user.first_name %></td>
+            <td class="user_col"><%= link_to user.last_name + " " + user.first_name, user_path(user) ,class: :user_col_link %></td>
             <td class="user_col" ><%= user.last_name_reading + " " + user.first_name_reading %></td>
             <td class="user_col"><%= user.birth_date %></td>
               <% prefecture = Prefecture.find(user.prefecture_id) %>
