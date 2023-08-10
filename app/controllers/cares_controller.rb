@@ -3,7 +3,7 @@ class CaresController < ApplicationController
   before_action :set_lecture, only: [:lecture_edit, :lecture_update]
   before_action :set_user_category, only: [:edit, :update]
   before_action :set_lecture_user , only: [ :lecture_edit, :lecture_update ]
-  
+  before_action :restrict_direct_access ,only: [:edit, :update]
   
   # ====usercategoryコントローラー====
   def index
@@ -107,6 +107,12 @@ class CaresController < ApplicationController
   end
   def set_security
     unless @user == current_user
+      redirect_to root_path
+    end
+  end
+
+  def restrict_direct_access
+    unless admin_signed_in? || (current_user == @user_category.user)
       redirect_to root_path
     end
   end

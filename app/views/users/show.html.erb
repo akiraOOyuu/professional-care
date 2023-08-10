@@ -11,7 +11,9 @@
           <tr>
             <th class="table__col1">名前</th>
             <td class="table__col2"><%= @user.last_name + " " + @user.first_name + " (" + @user.last_name_reading + " " + @user.first_name_reading + ")" %>
+            <% if user_signed_in? %>
             <%= link_to '登録編集',  edit_other_info_user_path(@user), class: :nav_top__btn %> </td>
+            <% end %>
           </tr>
           <tr>
             <th class="table__col1">登録地</th>

@@ -45,17 +45,32 @@
               <% else %>
               <td class="user_col"><%= "　　　　　"%>
               <% end %>
+
+            <% if current_user && current_user.admin? %>
               <td class="user_col">
-            <% if user.user_category %>
-                <% complete = Complete.find(user.user_category.complete_id) %>
-                <%= "#{complete.name || ''}" %>
+                <% if user.user_category %>
+                    <% complete = Complete.find(user.user_category.complete_id) %>
+                    <%= "#{complete.name || ''}" %>
+                <% else %>
+                    <%= '' %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to 'Edit', edit_complete_path(user), class: 'btn btn-primary' %>
+              </td>
             <% else %>
-                <%= '' %>
-            <% end %></td>
+              <td class="user_col">
+                <% if user.user_category %>
+                  <% complete = Complete.find(user.user_category.complete_id) %>
+                  <%= "#{complete.name || ''}" %>
+                <% else %>
+                  <%= '' %>
+                <% end %>
+              </td>
+            <% end %>
         </tr>
-      <% end %> 
+        <% end %> 
     </table>
- 
 </div>
 
 

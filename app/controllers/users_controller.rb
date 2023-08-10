@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :restrict_direct_access, only: [ :edit_other_info, :update_other_info]
+  before_action :restrict_direct_access, only: [ :show, :edit_other_info, :update_other_info]
   before_action :set_user, only: [:show, :edit_other_info, :update_other_info]
 
   def show
@@ -32,7 +32,9 @@ class UsersController < ApplicationController
     end
     def restrict_direct_access
       @user = User.find(params[:id])
-      redirect_to root_path unless @user == current_user || current_user&.admin?
+      unless admin_signed_in? || current_user == @user
+        redirect_to root_path
+      end
     end
   
     def user_params
