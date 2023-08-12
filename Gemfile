@@ -68,3 +68,4 @@ end
   gem 'dotenv-rails', groups: [:development, :test]
   gem 'rails-i18n'
   gem 'cancancan'
+  gem 'ransack'
