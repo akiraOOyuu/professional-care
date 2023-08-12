@@ -22,12 +22,12 @@ class User < ApplicationRecord
       validates :postcode                ,format: { with: /\A\d{3}[-]\d{4}\z/, message: "は半角数字と－を使用して下さい" }
       validates :city 
       validates :block
-      validates :prefecture_id           , numericality: {other_than: 1, message: "を選択して下さい"}
+      validates :prefecture_id           , numericality: { message: "を選択して下さい"}
     end
     validates :birth_date, presence:true
 
-    validates :worker_prefecture_id, numericality: { other_than: 1 , message: "を選択して下さい"}
-    validates :prefecture_id, numericality: { other_than: 1 , message: "を選択して下さい"}
+    validates :worker_prefecture_id, numericality: { message: "を選択して下さい"}
+    validates :prefecture_id, numericality: { message: "を選択して下さい"}
 
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }, presence: true, on: :create
      # パスワードのバリデーションを更新（編集）時に適用する
