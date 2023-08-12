@@ -205,6 +205,14 @@ li {
 }
 
 /* 検索機能 */
+#top-main {
+  height: 100vh;
+  background-image: url("kindergarten.jpg");
+  background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+  background-size: cover; /* 背景画像を要素に合わせて拡大・縮小する */
+  background-position: center; /* 背景画像の位置を中央に指定する */
+  opacity: 0.8;
+}
 .search-form {
   padding: 60px;
   display: flex;
