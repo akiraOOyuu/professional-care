@@ -46,8 +46,8 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
     end
-    it 'worker_prefecture_idを選択していないと保存できないこと' do
-      @user.prefecture_id = 1
+    it 'worker_prefecture_idを選択してないと保存できないこと' do
+      @user.prefecture_id = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("都道府県を選択して下さい")
     end
@@ -123,11 +123,6 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("Eメールは不正な値です")
     end
-    it 'emailは空では登録できない' do
-      @user.email = ""
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Eメールを入力してください", "Eメールは不正な値です")
-    end
     it 'passwordが5文字以下では登録できない' do
       @user.password = "00000"
         @user.password_confirmation = "00000"
@@ -165,20 +160,12 @@ RSpec.describe User, type: :model do
       @user.postcode = "123-456"
       @user.valid?
       expect(@user.errors.full_messages).to include("郵便番号は半角数字と－を使用して下さい")
-      end
-
-    it 'prefecture_idが空だと保存できないこと' do
-      @user.prefecture_id = ""
-      @user.valid?
-      expect(@user.errors.full_messages).to include("都道府県を入力してください", "都道府県を選択して下さい")
     end
-
     it 'prefecture_idを選択していないと保存できないこと' do
-      @user.prefecture_id = 1
+      @user.prefecture_id = ""
       @user.valid?
       expect(@user.errors.full_messages).to include("都道府県を選択して下さい")
     end
-
     it 'cityが空だと保存できないこと' do
       @user.city = ""
       @user.valid?

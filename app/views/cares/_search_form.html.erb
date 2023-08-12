@@ -1,7 +1,17 @@
 <div class="search_form">
 
-    <%= form_with(url: search_cares_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "名前で検索する", class: "search-input" %>
+  <%= search_form_for @search, url: search_cares_path, class: "search-form" do |form| %>
+    <%= form.label :childcare_woker_number_eq, "保育士番号" %>
+    <%= form.text_field :childcare_worker_number_eq, class: "search-input" %>
+
+    <%= form.label :last_name_or_first_name_or_first_name_reading_cont, "姓（せい）" %>
+    <%= form.text_field :last_name_or_last_name_reading_or_first_name_or_first_name_reading_cont, class: "search-input" %>
+    
+    <%= form.label :first_name_cont, "名（めい）" %>
+    <%= form.text_field :first_name_or_first_name_reading_cont, class: "search-input" %>
+
+      <%#= form.label :complete_id, "履修" %>
+      <%#= from.collection_select(:complete_id_eq, Complete.all, :id, :name, {include_blank: "---"}) %>
       <%= form.submit "検索", class: "search-btn" %>
-    <% end %>
-  </div>
+  <% end %>
+</div>

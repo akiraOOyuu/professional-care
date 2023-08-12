@@ -32,13 +32,13 @@ RSpec.describe UserCategory, type: :model do
          @user_category.valid?
          expect(@user_category.errors.full_messages).to include("所属園を入力してください","所属園は不正な値です") 
       end
-      it 'rank_idが初期値では保存できない' do
-        @user_category.rank_id = 1
+      it 'rank_idを選択してないと保存できない' do
+        @user_category.rank_id = " "
         @user_category.valid?
         expect(@user_category.errors.full_messages).to include("ランクを選択して下さい") 
       end
-      it 'complate_idが初期値では保存できない' do
-        @user_category.complete_id = 1
+      it 'complate_idを選択してないと保存できない' do
+        @user_category.complete_id = " "
         @user_category.valid?
         expect(@user_category.errors.full_messages).to include("履修を選択して下さい") 
       end     

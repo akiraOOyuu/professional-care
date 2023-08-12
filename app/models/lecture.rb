@@ -9,7 +9,7 @@ class Lecture < ApplicationRecord
     validates :instructor_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/}
   end
 
-  validates :field_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :field_id, numericality: { message: "を選択してください" }
 
   scope :latest_lecture_date, -> { order(lecture_day: :desc).pluck(:lecture_day).first }
   

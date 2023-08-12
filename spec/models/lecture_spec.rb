@@ -57,8 +57,8 @@ RSpec.describe Lecture, type: :model do
         @lecture.valid?
         expect(@lecture.errors.full_messages).to include("講師名は不正な値です") 
       end
-      it 'fild_idが初期値では保存できない' do
-        @lecture.field_id = 1
+      it 'fild_id を選択してないと保存できない' do
+        @lecture.field_id = " "
         @lecture.valid?
         expect(@lecture.errors.full_messages).to include("分野を選択してください") 
       end     

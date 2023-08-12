@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const lectureTime = parseInt(lectureTimes[i].textContent);
  
     // field_idが2, 3, 4, 5, 8の場合のみ合計時間に加算
-    if ([2, 3, 4, 5, 8].includes(fieldId)) {
+    if ([1, 2, 3, 4, 7].includes(fieldId)) {
       total_time += lectureTime;
     }
   }

@@ -36,7 +36,7 @@
           <label class="form-text">リーダー</label>
           <span class="indispensable">必須</span>
         </div>
-         <%= f.select :rank_id,  options_for_select(Rank.pluck(:name, :id)), {}, { class: "select-box", id: "prefecture" } %>
+         <%= f.select :rank_id,  options_for_select(Rank.pluck(:name, :id), prompt: "---"), { include_blank: true }, { class: "select-box", id: "prefecture" }, {include_blank: "---"} %>
       </div>
 
       <div class="form-group">
@@ -44,7 +44,7 @@
           <label class="form-text">履修</label>
           <span class="indispensable">必須</span>
         </div>
-         <%= f.select :complete_id,  options_for_select(Complete.pluck(:name, :id)), {}, { class: "select-box", id: "prefecture" } %>
+         <%= f.select :complete_id,  options_for_select(Complete.pluck(:name, :id), prompt: "---"), { include_blank: true }, { class: "select-box", id: "prefecture" }, {include_blank: "---"} %>
       </div>
       
         <div class='register-btn'>

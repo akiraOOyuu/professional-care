@@ -8,21 +8,16 @@ class CaresController < ApplicationController
   # ====usercategoryコントローラー====
   def index
     @users = User.all
+    @search = User.ransack(params[:q])
+    @users_name = @search.result(distinct: true)
+    @category = UserCategory.all
+    
 
   end
 
   def search
-    @keyword = params[:keyword]
-    @users = User.search_by_name(@keyword)
-  
-
-    if @keyword.present?
-      # 名前による検索
-      name_search = User.where("first_name LIKE ? OR last_name LIKE ? OR first_name_reading LIKE ? OR last_name_reading LIKE ?", "%#{@keyword}%", "%#{@keyword}%", "%#{@keyword}%", "%#{@keyword}%")
-    else
-      name_search = User.none
-    end
-
+    @search = User.ransack(params[:q])  # User モデルを適宜変更
+    @users = @search.result(distinct: true)
   end
   
 
