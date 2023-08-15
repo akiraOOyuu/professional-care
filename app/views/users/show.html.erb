@@ -1,9 +1,20 @@
 <div class="main">
   <div class="inner_sub">
     <div class="user__wrapper">
-      <div class="page-name">
-        <%= @user.first_name %>さんの My page
+    <div>
+      <div class="my-page-nav">
+        <div class="page-name">
+          |<%= @user.first_name %>さんの My page |
+        </div>
+          <div class="user-delete">
+            <% if  admin_signed_in? %>
+              <%= link_to "ユーザー削除", destroy_user_user_path(@user), method: :delete, data: { confirm: "ユーザーを削除しますか？" }, class: :user_delete_btn %> 
+            <% end %>
+          </div>
       </div>
+    </div>
+      
+      
       
        <div class="table_wrapper">
        <table class="table">

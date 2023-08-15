@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :destroy_user]
   before_action :restrict_direct_access, only: [ :show, :edit_other_info, :update_other_info]
   before_action :set_user, only: [:show, :edit_other_info, :update_other_info]
 
@@ -22,6 +22,13 @@ class UsersController < ApplicationController
       else
         render :edit_other_info
       end
+    end
+
+    def destroy_user
+      user = User.find(params[:id])
+      user.destroy
+      redirect_to root_path
+
     end
 
   

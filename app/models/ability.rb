@@ -9,6 +9,7 @@ class Ability
    
     if user.admin?
       can :manage, :all
+      can :destroy, User  # 管理者はユーザーを削除できる
     else
       can :read, :all
       can :update, User, id: user.id  # 自分自身の情報のみ編集可能

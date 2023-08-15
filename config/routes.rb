@@ -29,10 +29,12 @@ Rails.application.routes.draw do
     end
   end
     #パス以外のユーザー情報編集
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :delete] do
     member do
       get :edit_other_info
       patch :update_other_info
+      # user削除機能
+      delete :destroy_user
     end
   end
 end
