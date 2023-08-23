@@ -1,30 +1,26 @@
 <main class="top-main", id="top-main">
-  <div class="back-ground-img">
-    <%  if user_signed_in? %>
-      <%# ログインしているときは以下を表示する %>
-      <div class="top-contents">
-        <div class="greeting">
-            <%= link_to  current_user.first_name, user_path(current_user),class: :greeting__link%>
-            さん
-        </div> 
-        
-          <%# // ログインしているときは上記を表示する %>
-          <div class="card__wrapper">
-            <%# リンク 一覧%>
-
-            <%= link_to "マイページ", user_path(current_user.id), method: :get, class: :nav_top__btn %>
-      </div> 
-       <% elsif admin_signed_in? %>
-      <%# 管理者ログインしていないときは以下を表示する %>
-
-       <%# 検索フォームの表示 %>
-        <%= render "cares/search_form" %>
+  
+  <% if admin_signed_in? %>
+    <div class="back-ground-img-admin">
+      <%# 検索フォームの表示 %>
+      <%= render "cares/search_form" %>
       <%# ユーザーリスト表示 %>
-        <%= render "cares/user_list" %> 
-      </div>
+      <%= render "cares/user_list" %> 
+    </div>
 
-       <% else %>
-        <div>hello </div>
-    <% end %>
-  </div>
+  <% else %>
+    <%# ログインしていないときは以下を表示する %>
+    <div class="back-ground-img">
+      <div class="top-main-contents">
+        <div class ="top-up">
+          自分のキャリアが一目でわかる！
+        </div>
+        <div class="top-sub-content"></div>
+        <div class="top-down">
+          実務年数・研修時間を自動で計算！
+        </div>
+      </div>
+    </div>
+  <% end %>
+
 </main>

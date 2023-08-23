@@ -1,46 +1,42 @@
 <main class="top-main">
-  <div class="back-ground-img">
+  
     <%  if user_signed_in? %>
       <%# ログインしているときは以下を表示する %>
-      <div class="top-main-contents">
-        <div class ="top-up">
-          ようこそ、
-          <div class="greeting">
-          <%= link_to  current_user.first_name, user_path(current_user),class: :greeting__link%>
-          さん
-        </div>
+      <div class="back-ground-img">
+        <div class="top-main-contents">
+          <div class ="top-up">
+            ようこそ、
+            <div class="greeting">
+              <%= link_to  current_user.first_name, user_path(current_user),class: :greeting__link%>
+             さん
+            </div>
+          </div>
+            <div class="top-sub-content"></div>
+            <div class="top-down"></div>
+        <div class="top-contents">
+          <div class="card__wrapper"></div> 
       </div>
-            <div class="top-sub-content">
-            </div>
-            <div class="top-down">
-             
-            </div>
-         </div>
-      <div class="top-contents">
-        
-          <div class="card__wrapper">
-          
-         </div> 
           <%# 管理者ログインしているときは以下を表示する %>
     <% elsif admin_signed_in? %>
-          <%# 検索フォームの表示 %>
-            <%= render "cares/search_form" %>
-          <%# ユーザーリスト表示 %>
-            <%= render "cares/user_list" %> 
-          </div>
+      <div class="back-ground-img-admin">
+        <%# 検索フォームの表示 %>
+          <%= render "cares/search_form" %>
+        <%# ユーザーリスト表示 %>
+          <%= render "cares/user_list" %> 
+      </div>
     <% else %>
           <%# ログインしていないときは以下を表示する %>
-          <div class="top-main-contents">
-            <div class ="top-up">
-             自分のキャリアが一目でわかる！
-            </div>
-            <div class="top-sub-content">
-            </div>
-            <div class="top-down">
-              実務年数・研修時間を自動で計算！
-            </div>
-         </div>
+      <div class="back-ground-img">
+        <div class="top-main-contents">
+          <div class ="top-up">
+            自分のキャリアが一目でわかる！
+          </div>
+          <div class="top-sub-content"></div>
+          <div class="top-down">
+            実務年数・研修時間を自動で計算！
+          </div>
+        </div>
+      </div>
     <% end %>
     
-  </div>
 </main>

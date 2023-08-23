@@ -81,7 +81,7 @@
 }
 
 /* トップぺージ */
-.top-main {
+.back-ground-img {
   height: 100vh;
   background-image: url("care.jpg");
   background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
@@ -106,6 +106,12 @@
   display: flex;
   justify-content: end;
 }
+
+/* footer_navリスト */
+.footer_nav_list {
+  display: flex;
+  justify-content: center;
+}
 .footer_nav {
   display: flex;
   justify-content: center;
@@ -114,7 +120,8 @@
   margin-right: 20px;
 }
 .footer_nav:hover {
-  opacity: 0.8;
+  color:#cff076;
+  opacity: 0.7;
 }
 li {
   list-style: none;
@@ -205,7 +212,7 @@ li {
 }
 
 /* 検索機能 */
-#top-main {
+.back-ground-img-admin {
   height: 100vh;
   background-image: url("kindergarten.jpg");
   background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       @lecture = @user.lectures.includes(:user).order("lecture_day DESC")
       
 
-   end
+  end
   #  user編集機能 その他情報 住所とか
    def edit_other_info
    end
@@ -61,4 +61,4 @@ class UsersController < ApplicationController
                                    :building,
                                    )
     end
-  end
+end

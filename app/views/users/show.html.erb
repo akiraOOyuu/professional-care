@@ -8,7 +8,7 @@
         </div>
           <div class="user-delete">
             <% if  admin_signed_in? %>
-              <%= link_to "ユーザー削除", destroy_user_user_path(@user), method: :delete, data: { confirm: "ユーザーを削除しますか？" }, class: :user_delete_btn %> 
+              <%= link_to "ユーザー削除", destroy_user_user_path(@user), method: :delete, data: { confirm: "このユーザーのすべての情報が削除されます。復元はできません。ユーザーを削除してもよろしいですか？" }, class: :user_delete_btn %> 
             <% end %>
           </div>
       </div>
