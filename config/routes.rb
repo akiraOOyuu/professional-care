@@ -13,9 +13,7 @@ Rails.application.routes.draw do
  
   root to: "cares#index"
 
-  resources :prints, only: :index do
-   
-  end
+
 
     # 講義内容登録・編集・削除
   resources :cares, only: [:index, :new, :create, :edit, :update] do
