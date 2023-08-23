@@ -19,10 +19,11 @@
       <div class="nav__left">
         <%= link_to image_tag("logo.png", class: :logo), root_path %>
       </div>
-      <div class="nav__right">
+      <div class="nav__right" id="hamberger_icon">
          
-           <%= link_to image_tag("bars_24.png", class: :hamburger, id: "hamburger-btn") %>
-           </div>
+          <%= link_to image_tag("hmb-icon.png", class: :hamburger, id: "hamburger-btn") %>
+          <%= link_to image_tag("peke-icon.png", class: "hamburger_close hidden", id: "hamburger-close-btn") %>
+      </div>
     </div>
   </div>
 </header>
