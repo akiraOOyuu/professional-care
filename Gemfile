@@ -65,7 +65,7 @@ group :production do
     gem 'pg'
 end
   gem 'active_hash'
-  gem 'dotenv-rails', groups: [:development, :test]
-  gem 'rails-i18n'
-  gem 'cancancan'
-  gem 'ransack'
+  gem 'dotenv-rails', groups: [:development, :test] #環境変数
+  gem 'rails-i18n'                                  #日本語化
+  gem 'cancancan'                                   #許可
+  gem 'ransack'                                     #検索機能
