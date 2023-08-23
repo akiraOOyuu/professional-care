@@ -1,0 +1,80 @@
+<div>
+  
+      <div class="other-content">
+      <div class="user_list_list">保育士等キャリアアップ研修修了者名簿()</div>
+      <table class="user-lists" >
+        <tr>
+            <td class="print-col">No</td>
+            <td class="print-col">保育士番号</td>
+            <td class="print-col">名前</td>
+            <td class="print-col">なまえ</td>
+            <td class="print-col">生年月日</td>
+            <td class="print-col">住所</td>
+            <td class="print-col">勤務先施設</td>
+            <td class="print-col">受講講義時間数</td>
+            <td class="print-col">修了年月日</td>
+            <td class="print-col">履修</td>
+
+        </tr>
+        </div>
+      <div id='user-list-container'>
+
+        <% @users.each_with_index do |user, index| %>
+
+        <tr>
+            <td class="print_col2"><%= index + 1 %></td>
+              <% worker_prefecture = WorkerPrefecture.find(user.worker_prefecture_id) %>
+            <td class="print_col2"><%= "#{worker_prefecture.name}-#{user.childcare_worker_number}" %></td>
+            <td class="print_col2"><%= link_to user.last_name + " " + user.first_name, user_path(user) ,class: :user_col_link %></td>
+            <td class="print_col2" ><%= user.last_name_reading + " " + user.first_name_reading %></td>
+            <td class="print_col2"><%= user.birth_date %></td>
+              <% prefecture = Prefecture.find(user.prefecture_id) %>
+            <td class="print_col2"><%= "#{prefecture.name} #{user.city} #{user.block} #{user.building.presence || ''}" %></td>
+            <% if user.user_category %>
+              <td class="print_col2"><%= user.user_category.affiliation  %></td>
+            <% else %>
+              <td class="print_col2"><%= "　　　　　"%>
+            <% end %>
+              <td class="print_col2">
+                  <p class="total-time" data-total-time="<%= calculate_total_time(user.lectures) %>">
+                     <%= min2hour(calculate_total_time(user.lectures)) %>
+                  </p>
+              </td>
+              <% if user.lectures.present? %>
+              <td class="print_col2"><%= user.lectures.latest_lecture_date %></td>
+              <% else %>
+              <td class="print_col2"><%= "　　　　　"%>
+              <% end %>
+
+            <% if current_user && current_user.admin? %>
+              <td class="print_col2">
+                <% if user.user_category %>
+                    <% complete = Complete.find(user.user_category.complete_id) %>
+                    <%= "#{complete.name || ''}" %>
+                <% else %>
+                    <%= '' %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to 'Edit', edit_complete_path(user), class: 'btn btn-primary' %>
+              </td>
+            <% else %>
+              <td class="print_col2">
+                <% if user.user_category %>
+                  <% complete = Complete.find(user.user_category.complete_id) %>
+                  <%= "#{complete.name || ''}" %>
+                <% else %>
+                  <%= '' %>
+                <% end %>
+              </td>
+            <% end %>
+        </tr>
+        <% end %> 
+    </table>
+</div>
+
+
+
+
+
+

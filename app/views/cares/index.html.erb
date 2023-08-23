@@ -23,6 +23,9 @@
          </div> 
           <%# 管理者ログインしているときは以下を表示する %>
     <% elsif admin_signed_in? %>
+    <div class="print_btn">
+       <%= link_to '印刷する', prints_path, method: :get, target: '_blank', class: 'btn btn-primary' %>
+    </div>
           <%# 検索フォームの表示 %>
             <%= render "cares/search_form" %>
           <%# ユーザーリスト表示 %>

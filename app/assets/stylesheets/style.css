@@ -468,6 +468,13 @@ li {
   color: #641111;
   opacity: 0.8;
 }
+
+.print-col {
+  border: 1px solid black;
+}
+.print_col2 {
+  border: 1px solid black;
+}
 /* footer */
 .footer {
   background-color: #2c1f02f1;
