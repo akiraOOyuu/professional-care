@@ -1,5 +1,5 @@
 class CaresController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :search, :edit, :update]
+  before_action :authenticate_user!, except: [:index, :search, :edit, :update,:print_user_list]
   before_action :set_lecture, only: [:lecture_edit, :lecture_update]
   before_action :set_user_category, only: [:edit, :update]
   before_action :set_lecture_user , only: [ :lecture_edit, :lecture_update ]
@@ -11,8 +11,26 @@ class CaresController < ApplicationController
     @search = User.ransack(params[:q])
     @users_name = @search.result(distinct: true)
     @category = UserCategory.all
-    
+  end
 
+  def print_user_list
+    @users = User.all
+    @search = User.ransack(params[:q])
+    @users_name = @search.result(distinct: true)
+    @category = UserCategory.all
+
+    respond_to do |format|
+      format.html do
+        redirect_to print_user_list_cares_path(format: :pdf, debug: 1)
+      end
+
+      format.pdf do
+        render pdf: "print_user_list",   # PDFのファイル名を指定
+               layout: 'application.pdf.erb',                   # レイアウトファイルの指定
+               template: "cares/print_user_list.pdf.erb",  # 印刷するビューファイルのパス
+               orientation: 'Landscape'   # PDFを横向きにする
+      end
+    end
   end
 
   def search

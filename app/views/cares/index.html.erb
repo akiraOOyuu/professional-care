@@ -21,6 +21,9 @@
       <div class="back-ground-img-admin">
         <%# 検索フォームの表示 %>
           <%= render "cares/search_form" %>
+          <div class="print-form">
+          <%= link_to '印刷する', print_user_list_cares_path, method: :get, target: '_blank', class: 'print-btn' %>
+          </div>
         <%# ユーザーリスト表示 %>
           <%= render "cares/user_list" %> 
       </div>
