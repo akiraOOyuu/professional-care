@@ -1,0 +1,75 @@
+
+<div class="other-content-pr">
+    <div class="user_list-print">保育士等キャリアアップ研修修了者名簿</div>
+    <table class="user-lists" >
+      <tr>
+          <td class="user_col_pr">No</td>
+          <td class="user_col_pr">保育士番号</td>
+          <td class="user_col_pr">名前</td>
+          <td class="user_col_pr">なまえ</td>
+          <td class="user_col_pr">生年月日</td>
+          <td class="user_col_pr">住所</td>
+          <td class="user_col_pr">勤務先施設</td>
+          <td class="user_col_pr">受講講義時間数</td>
+          <td class="user_col_pr">修了年月日</td>
+          <td class="user_col_pr">履修</td>
+
+      </tr>
+</div>
+  <div id='user-list-container'>
+
+    <% @users.each_with_index do |user, index| %>
+
+      <tr>
+        <td class="user_col_pr"><%= index + 1 %></td>
+          <% worker_prefecture = WorkerPrefecture.find(user.worker_prefecture_id) %>
+        <td class="user_col_pr"><%= "#{worker_prefecture.name}-#{user.childcare_worker_number}" %></td>
+        <td class="user_col_pr"><%= user.last_name + " " + user.first_name %></td>
+        <td class="user_col_pr" ><%= "(" + user.last_name_reading + " " + user.first_name_reading + ")" %></td>
+        <td class="user_col_pr"><%= user.birth_date %></td>
+          <% prefecture = Prefecture.find(user.prefecture_id) %>
+        <td class="user_col_pr"><%= "#{prefecture.name} #{user.city} #{user.block} #{user.building.presence || ''}" %></td>
+        <% if user.user_category %>
+          <td class="user_col_pr"><%= user.user_category.affiliation  %></td>
+        <% else %>
+          <td class="user_col_pr"><%= "　　　　　"%>
+        <% end %>
+
+          <td class="user_col_pr">
+              <p class="total-time" data-total-time="<%= calculate_total_time(user.lectures) %>">
+                  <%= min2hour(calculate_total_time(user.lectures)) %>
+              </p>
+          </td>
+          <% if user.lectures.present? %>
+            <td class="user_col_pr"><%= user.lectures.latest_lecture_date %></td>
+          <% else %>
+            <td class="user_col_pr"><%= "　　　　　"%>
+          <% end %>
+
+        <% if current_user && current_user.admin? %>
+          <td class="user_col_pr">
+            <% if user.user_category %>
+                <% complete = Complete.find(user.user_category.complete_id) %>
+                <%= "#{complete.name || ''}" %>
+            <% else %>
+                <%= '' %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_complete_path(user), class: 'btn btn-primary' %>
+          </td>
+        <% else %>
+          <td class="user_col_pr">
+            <% if user.user_category %>
+              <% complete = Complete.find(user.user_category.complete_id) %>
+              <%= "#{complete.name || ''}" %>
+            <% else %>
+              <%= '' %>
+            <% end %>
+            
+          </td>
+        <% end %>
+      </tr>
+    <% end %> 
+  </div>
+   </table>

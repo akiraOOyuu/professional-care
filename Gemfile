@@ -69,3 +69,5 @@ end
   gem 'rails-i18n'                                  #日本語化
   gem 'cancancan'                                   #許可
   gem 'ransack'                                     #検索機能
+  gem 'wicked_pdf'                                  #印刷機能
+  gem 'wkhtmltopdf-binary'

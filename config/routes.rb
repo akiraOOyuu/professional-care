@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       get :search
       get :lecture_new
       post :lecture_create
+      # 印刷機能
+      get :print_user_list
     end
      member do
     get :lecture_edit
