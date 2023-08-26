@@ -28,10 +28,10 @@ WickedPdf.config = {
   #
   # use_xvfb: true,
   :exe_path => Gem.bin_path('wkhtmltopdf-binary', 'wkhtmltopdf'),
-  :encoding => "utf-8",
-  :use_xvfb => true,
-  :layout => "pdf_styles.html",
-  :margin => { :top => 20, :bottom => 20, :left => 20, :right => 20 },
-  :footer => { :center => "Center Text", :font_size => 10 },
-  :extra => "--no-sandbox --encoding utf-8 --font-family 'IPAゴシック'",
+  :encoding => "utf-8", # エンコーディングを指定
+  :use_xvfb => true, # 仮想 X サーバーを使用する場合
+  :layout => "pdf_styles.html", # PDF用のレイアウトファイルを指定
+  :margin => { :top => 20, :bottom => 20, :left => 20, :right => 20 }, # ページ余白を指定
+  :footer => { :center => "Center Text", :font_size => 10 }, # フッターの設定
+  :extra => "--no-sandbox --font-family 'IPAゴシック'" # IPAゴシックのフォントファミリーを指定
 }
