@@ -4,6 +4,19 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <%#= wicked_pdf_stylesheet_link_tag "pdf_styles" %>
   <%= stylesheet_link_tag wicked_pdf_asset_base64("pdf_styles") %>
+   <style>
+    .user_list-print {
+      font-size: 20px;
+      margin-bottom: 30px;
+      font-family: 'IPAMincho', 'IPA明朝';
+    }
+    .user_col_pr {
+      font-size: 20px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    .other-content-pr {
+      font-family: 'IPAMincho', 'IPA明朝';
+    }
 </head>
 <body>
   <div class="pdf-content">
