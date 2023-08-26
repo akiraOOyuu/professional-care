@@ -28,7 +28,7 @@ WickedPdf.config = {
   #
   # use_xvfb: true,
   :exe_path => Gem.bin_path('wkhtmltopdf-binary', 'wkhtmltopdf'),
-  :wkhtmltopdf => '/usr/bin/wkhtmltopdf', # この部分は wkhtmltopdf のパスを指定
+  :wkhtmltopdf => '/usr/local/bin/wkhtmltopdf', # この部分は wkhtmltopdf のパスを指定
   :encoding => "utf-8", # エンコーディングを指定
   :use_xvfb => true, # 仮想 X サーバーを使用する場合
   :layout => "pdf_styles.html", # PDF用のレイアウトファイルを指定
