@@ -28,5 +28,5 @@ WickedPdf.config = {
   #
   # use_xvfb: true,
   :encoding => "utf-8",
-  :extra => "--font-family 'IPAゴシック'" 
- }
+  :extra => "--no-sandbox --font-family 'IPAゴシック'" # 例としてIPAゴシックを指定
+}
