@@ -27,6 +27,5 @@ WickedPdf.config = {
   # 'xvfb-run' command, in order to simulate an X server.
   #
   # use_xvfb: true,
-  :encoding => "utf-8"
-  :extra => "--no-sandbox --font-family 'IPAゴシック'" # 例としてIPAゴシックを指定
+
 }
