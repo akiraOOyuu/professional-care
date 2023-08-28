@@ -26,6 +26,6 @@
 
 @font-face {
   font-family: 'IPA明朝';
-  src: url('<%= asset_path "ipaexg00401/ipaexg.ttf" %>') format('truetype');
+  src: url('<%= asset_path "ipaexg00401" %>') format('truetype');
 }
 
