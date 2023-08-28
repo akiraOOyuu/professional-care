@@ -1,0 +1,12 @@
+.user_list-print {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.user_col_pr {
+  font-size: 20px;
+}
+
+@font-face {
+  font-family: 'IPA明朝';
+  src: url('<%= asset_path "ipaexg.ttf" %>') format('truetype');
+}

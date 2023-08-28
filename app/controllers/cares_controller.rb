@@ -29,8 +29,7 @@ class CaresController < ApplicationController
                layout: 'application.pdf.erb',                   # レイアウトファイルの指定
                template: "cares/print_user_list.pdf.erb",  # 印刷するビューファイルのパス
                orientation: 'Landscape',   # PDFを横向きにする
-               encoding: 'UTF-8',
-               font: 'IPAゴシック'
+               encoding: 'UTF-8'
       end
     end
   end
