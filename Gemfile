@@ -70,4 +70,4 @@ end
   gem 'cancancan'                                   #許可
   gem 'ransack'                                     #検索機能
   gem 'wicked_pdf'                                  #印刷機能
-  gem 'wkhtmltopdf-binary'
+  gem 'wkhtmltopdf-binary' 
