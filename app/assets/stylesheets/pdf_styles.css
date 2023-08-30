@@ -8,5 +8,5 @@
 
 @font-face {
   font-family: 'IPA明朝';
-  src: url('<%= asset_path "vendor/fonts/ipaexg00401/ipaexg.ttf" %>') format('truetype');
+  src: url('<%= asset_path "assets/fonts/ipaexg.ttf" %>') format('truetype');
 }
