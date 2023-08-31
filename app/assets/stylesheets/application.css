@@ -25,6 +25,6 @@
 }
 
 @font-face {
-  font-family: 'CustomFont';  /* フォントファミリー名 */
+  font-family: 'IPA明朝';  /* フォントファミリー名 */
   src: url('assets/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');  /* フォントファイルへの相対パス */
 }
