@@ -31,7 +31,7 @@ class CaresController < ApplicationController
                orientation: 'Landscape',   # PDFを横向きにする
                encoding: 'UTF-8',
                font_family: 'IPA明朝',
-               stylesheets: ['pdf_styles'] 
+               stylesheets: ['pdf_styles.css'] 
       end
     end
   end
