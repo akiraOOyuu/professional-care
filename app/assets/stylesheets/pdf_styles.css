@@ -10,4 +10,6 @@
   font-family: 'IPA明朝';
   src: url('./fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
 }
-
+.pdf-content {
+  font-family: IPA明朝;
+}
