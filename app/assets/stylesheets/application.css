@@ -24,3 +24,7 @@
   font-size: 20px;
 }
 
+@font-face {
+  font-family: 'IPA明朝';  /* フォントファミリー名 */
+  src: url('./fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');  /* フォントファイルへの相対パス */
+}
