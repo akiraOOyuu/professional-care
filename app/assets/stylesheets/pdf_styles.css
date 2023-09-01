@@ -8,8 +8,7 @@
 
 @font-face {
   font-family: 'IPA明朝';
-  src: url('<%= Rails.root.join('app', 'assets', 'fonts', 'NotoSansJP-VariableFont_wght.ttf') %>') format('truetype')
-
+  src: url('<%= Rails.root.join('app', 'assets', 'fonts', 'NotoSansJP-VariableFont_wght.ttf') %>') format('truetype');
 }
 
 .pdf-content {
