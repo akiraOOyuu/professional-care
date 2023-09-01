@@ -16,19 +16,11 @@
  * {
   box-sizing: border-box;
 }
-.user_list-print {
-  font-size: 40px;
-  margin-bottom: 30px;
-}
-.user_col_pr {
-  font-size: 20px;
-}
-
-/* @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:500|Noto+Sans+JP:500|Noto+Serif+JP:500&display=swap&subset=japanese'); #フォント指定 */
-@font-face {
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:500|Noto+Sans+JP:500|Noto+Serif+JP:500&display=swap&subset=japanese'); #フォント指定
+/* @font-face {
   font-family: 'IPA明朝';
-  src: url('assets/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
-}
+  src: url('app/assets/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+} */
 
 .pdf-content {
   font-family: 'IPA明朝';
