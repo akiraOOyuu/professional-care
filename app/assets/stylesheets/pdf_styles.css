@@ -8,6 +8,9 @@
 
 @font-face {
   font-family: 'IPA明朝';
-  src: url('./fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/NotoSansJP-VariableFont_wght.ttf') format('truetype');
 }
 
+html {
+   font-family: 'IPA明朝';
+}
