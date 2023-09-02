@@ -27,6 +27,6 @@ WickedPdf.config = {
   # 'xvfb-run' command, in order to simulate an X server.
   #
   # use_xvfb: true,
-   exe_path: '/home/meiko/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/wkhtmltopdf-binary-0.12.6.6',
+  exe_path: "#{Gem.loaded_specs['wkhtmltopdf-binary'].full_gem_path}/bin/wkhtmltopdf",
   :font_path => Rails.root.join('app', 'assets', 'fonts') # フォントのパス
 }
